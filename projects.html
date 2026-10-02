@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Work | Cristian Scebec</title>
-<meta name="description" content="The systems I run and the coursework I submitted: a live Shopify storefront, an always-on home stack, a local AI server, and seven BTEC units labelled by their honest stage.">
+<meta name="description" content="Three storefronts and the systems behind them, plus the coursework I submitted: a live Shopify shop, a full rebrand and a second storefront in development, an always-on home stack, a local AI server, and seven BTEC units.">
 <meta name="author" content="Cristian Scebec">
 
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://sqwlasss.github.io/portfolio/projects.html">
 <meta property="og:url" content="https://sqwlasss.github.io/portfolio/projects.html">
 <meta property="og:title" content="Work | Cristian Scebec">
-<meta property="og:description" content="The systems I run and the coursework I submitted: a live Shopify storefront, an always-on home stack, a local AI server, and seven BTEC units labelled by their honest stage.">
+<meta property="og:description" content="Three storefronts and the systems behind them, plus the coursework I submitted: a live Shopify shop, a full rebrand and a second storefront in development, an always-on home stack, a local AI server, and seven BTEC units.">
 <meta property="og:image" content="assets/images/u13-site-home.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -53,9 +53,8 @@
 
     <div class="section__head">
       <h1 class="section__title">Work</h1>
-      <p class="section__note">Two kinds of work: things I built and still run, and the
-      coursework I submitted. The live work is first because it is what other people actually
-      use.</p>
+      <p class="section__note">Websites first, then the systems and tools behind them, then the
+      coursework I submitted. The live work leads because it is what other people actually use.</p>
     </div>
   </div>
 </section>
@@ -64,9 +63,9 @@
   <div class="shell">
 
     <div class="section__head">
-      <h2 class="section__title">Live work</h2>
-      <p class="section__note">Built, deployed and in use. Each one has a constraint behind it
-      that shaped the design.</p>
+      <h2 class="section__title">Websites</h2>
+      <p class="section__note">Three storefronts. One is live; two are in development. Each has
+      a constraint behind it that shaped the design.</p>
     </div>
 
     <ul class="ledger">
@@ -74,15 +73,14 @@
       <li class="ledger__item">
         <div class="ledger__link ledger__link--plain">
           <div>
-            <span class="ledger__unit">&Oslash;BJECT 29 &mdash; art print storefront</span>
+            <span class="ledger__unit">ddouble &mdash; art print storefront</span>
             <h3 class="ledger__title">A live shop front on React and the Shopify Storefront API</h3>
             <p class="ledger__desc">Twenty routes covering a wall-art and homeware catalogue:
             filterable product listings, product pages with click-to-zoom galleries, a
             persistent cart, a wishlist, and an account area with order history, addresses and
             password reset. Customer accounts are handled by Firebase and the catalogue, cart
-            and checkout by Shopify, so card details never touch the front end. Rebranded the
-            business from its previous name and shipped it to Vercel. About 10,500 lines across
-            92 source files and 39 components.</p>
+            and checkout by Shopify, so card details never touch the front end. About 10,500
+            lines across 92 source files and 39 components.</p>
             <ul class="ledger__artefacts">
               <li>React 18, Vite 6, React Router</li>
               <li>Shopify Storefront API</li>
@@ -94,9 +92,78 @@
             </ul>
             <p class="skill-group__proof"><a href="https://ddouble-store.vercel.app" target="_blank" rel="noopener noreferrer">Visit the live site</a></p>
           </div>
-          <p class="status status--live ledger__status">In production</p>
+          <p class="status status--live ledger__status">Live</p>
         </div>
       </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">&Oslash;BJECT 29 &mdash; rebrand, in development</span>
+            <h3 class="ledger__title">A full redesign of the same shop, not yet published</h3>
+            <p class="ledger__desc">A ground-up rebrand of the art-print store under a new
+            identity. I rebuilt the visual system around a token layer, replaced every hardcoded
+            colour with a token, and wired the design system into the linter so a regression
+            fails the build. I split the largest page into four components without changing its
+            rendered output, then restyled it. All fourteen routes were checked at phone width
+            for horizontal overflow, contrast and focus rings were measured, and the five
+            analytics events kept working through the rewrite. Total JavaScript fell from 806 KB
+            to 795 KB. It is not live yet: the real purchase flow needs production Shopify keys,
+            and the site still points at the old domain.</p>
+            <ul class="ledger__artefacts">
+              <li>React 18 &amp; Vite 6</li>
+              <li>design-token system</li>
+              <li>Tailwind &amp; shadcn/ui</li>
+              <li>accessibility &amp; reduced motion</li>
+              <li>GA4 events preserved</li>
+              <li>14 routes verified</li>
+              <li>not yet deployed</li>
+            </ul>
+          </div>
+          <p class="status status--progress ledger__status">In development</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Tessel &mdash; single-product storefront</span>
+            <h3 class="ledger__title">A Next.js shop headless, with checkout that keeps the
+            business out of scope</h3>
+            <p class="ledger__desc">A storefront for a watch business, built on Next.js with
+            TypeScript and a hand-written Shopify client rather than a framework. The cart runs
+            through server actions and checkout happens on Shopify's own page, so the business
+            never handles card data. It verifies incoming webhooks with an HMAC signature,
+            strips GPS metadata out of every product photograph, and ships a check that fails
+            the build while any legal business detail is still a placeholder. About 7,700 lines
+            across 11 routes.</p>
+            <ul class="ledger__artefacts">
+              <li>Next.js App Router, React 19, TypeScript</li>
+              <li>server-side Shopify client, no Hydrogen</li>
+              <li>HMAC-verified order webhooks</li>
+              <li>EXIF and GPS stripping pipeline</li>
+              <li>compliance check that hard-fails</li>
+              <li>not yet published</li>
+            </ul>
+          </div>
+          <p class="status status--progress ledger__status">In development</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="shell">
+
+    <div class="section__head">
+      <h2 class="section__title">Systems &amp; other work</h2>
+      <p class="section__note">The infrastructure and tools behind the sites, and the projects
+      I keep for their own sake.</p>
+    </div>
+
+    <ul class="ledger">
 
       <li class="ledger__item">
         <div class="ledger__link ledger__link--plain">
@@ -118,7 +185,7 @@
               <li>Wake-on-LAN and SSH power control</li>
             </ul>
           </div>
-          <p class="status status--live ledger__status">In production</p>
+          <p class="status status--live ledger__status">Running</p>
         </div>
       </li>
 
@@ -146,7 +213,7 @@
               <li>headless benchmark harness</li>
             </ul>
           </div>
-          <p class="status status--live ledger__status">In production</p>
+          <p class="status status--live ledger__status">Running</p>
         </div>
       </li>
 
@@ -171,32 +238,6 @@
             </ul>
           </div>
           <p class="status status--live ledger__status">In production</p>
-        </div>
-      </li>
-
-      <li class="ledger__item">
-        <div class="ledger__link ledger__link--plain">
-          <div>
-            <span class="ledger__unit">Tessel &mdash; single-product storefront</span>
-            <h3 class="ledger__title">A Next.js shop headless, with checkout that keeps the
-            business out of scope</h3>
-            <p class="ledger__desc">A storefront for a watch business, built on Next.js with
-            TypeScript and a hand-written Shopify client rather than a framework. The cart runs
-            through server actions and checkout happens on Shopify's own page, so the business
-            never handles card data. It verifies incoming webhooks with an HMAC signature,
-            strips GPS metadata out of every product photograph, and ships a check that fails
-            the build while any legal business detail is still a placeholder. About 7,700 lines
-            across 11 routes.</p>
-            <ul class="ledger__artefacts">
-              <li>Next.js App Router, React 19, TypeScript</li>
-              <li>server-side Shopify client, no Hydrogen</li>
-              <li>HMAC-verified order webhooks</li>
-              <li>EXIF and GPS stripping pipeline</li>
-              <li>compliance check that hard-fails</li>
-              <li>not yet published</li>
-            </ul>
-          </div>
-          <p class="status status--built ledger__status">Built, not yet deployed</p>
         </div>
       </li>
 

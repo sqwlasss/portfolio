@@ -84,9 +84,8 @@
 <section class="section">
   <div class="shell">
     <div class="section__head">
-      <h2 class="section__title">What I have running right now</h2>
-      <p class="section__note">Not coursework. Systems I built and keep alive, with real
-      constraints behind each one.</p>
+      <h2 class="section__title">Websites</h2>
+      <p class="section__note">Storefronts I have built. One is live; two are in development.</p>
     </div>
 
     <ul class="ledger">
@@ -94,13 +93,13 @@
       <li class="ledger__item">
         <div class="ledger__link ledger__link--plain">
           <div>
-            <span class="ledger__unit">&Oslash;BJECT 29 &mdash; art print storefront</span>
-            <h3 class="ledger__title">A live shop front built on a React and Shopify codebase</h3>
+            <span class="ledger__unit">ddouble &mdash; art print storefront</span>
+            <h3 class="ledger__title">A live wall-art shop on React and Shopify</h3>
             <p class="ledger__desc">A wall-art and homeware storefront with twenty routes:
             catalogue filters, product pages with click-to-zoom galleries, a persistent cart,
             a wishlist, and a full account area with order history and address management.
             Customer accounts are Firebase; the catalogue, cart and checkout are the Shopify
-            Storefront API. Rebranded the business and deployed it to Vercel.</p>
+            Storefront API, so card details never touch the front end. Deployed to Vercel.</p>
             <ul class="ledger__artefacts">
               <li>React 18 &amp; Vite 6</li>
               <li>Shopify Storefront API</li>
@@ -109,10 +108,80 @@
               <li>20 routes, ~10,500 lines</li>
               <li>live on Vercel</li>
             </ul>
+            <p class="skill-group__proof"><a href="https://ddouble-store.vercel.app" target="_blank" rel="noopener noreferrer">Visit the live site</a></p>
           </div>
-          <p class="status status--live ledger__status">In production</p>
+          <p class="status status--live ledger__status">Live</p>
         </div>
       </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">&Oslash;BJECT 29 &mdash; rebrand, in development</span>
+            <h3 class="ledger__title">A full redesign of the same shop, not yet published</h3>
+            <p class="ledger__desc">A ground-up rebrand of the art-print store under a new
+            identity. I rebuilt the visual system around a token layer, replaced every hardcoded
+            colour with a token, and wired the design system into the linter so a regression
+            fails the build. I split the largest page into four components without changing its
+            rendered output, then restyled it. All fourteen routes were checked at phone width
+            for horizontal overflow, contrast and focus rings were measured, and the five
+            analytics events kept working through the rewrite. Total JavaScript fell from 806 KB
+            to 795 KB. It is not live yet: the real purchase flow needs production Shopify keys,
+            and the site still points at the old domain.</p>
+            <ul class="ledger__artefacts">
+              <li>React 18 &amp; Vite 6</li>
+              <li>design-token system</li>
+              <li>Tailwind &amp; shadcn/ui</li>
+              <li>accessibility &amp; reduced motion</li>
+              <li>GA4 events preserved</li>
+              <li>14 routes verified</li>
+              <li>not yet deployed</li>
+            </ul>
+          </div>
+          <p class="status status--progress ledger__status">In development</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Tessel &mdash; single-product storefront</span>
+            <h3 class="ledger__title">A Next.js storefront for a watch business</h3>
+            <p class="ledger__desc">A storefront on Next.js 15 and React 19, with a
+            hand-written, strongly typed Shopify client instead of a framework. Checkout runs
+            on Shopify's own page, so the business never handles card details, and incoming
+            order webhooks are verified with an HMAC signature. A build step strips GPS and
+            EXIF data from every product photograph, and a compliance check fails the build
+            while any legally required business detail is still a placeholder. The brand name
+            itself is provisional. Not published &mdash; it is developed against a mocked
+            catalogue until the shop is connected.</p>
+            <ul class="ledger__artefacts">
+              <li>Next.js 15 App Router</li>
+              <li>React 19, TypeScript strict</li>
+              <li>hand-rolled Shopify client</li>
+              <li>HMAC-verified webhooks</li>
+              <li>EXIF &amp; GPS stripping</li>
+              <li>compliance build gate</li>
+              <li>not yet published</li>
+            </ul>
+          </div>
+          <p class="status status--progress ledger__status">In development</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="shell">
+    <div class="section__head">
+      <h2 class="section__title">Systems &amp; other work</h2>
+      <p class="section__note">The infrastructure and tools behind the sites, and the projects
+      I keep for their own sake.</p>
+    </div>
+
+    <ul class="ledger">
 
       <li class="ledger__item">
         <div class="ledger__link ledger__link--plain">
@@ -180,6 +249,31 @@
             </ul>
           </div>
           <p class="status status--live ledger__status">In production</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Face research pipeline</span>
+            <h3 class="ledger__title">A consent-gated image analysis system, written from scratch</h3>
+            <p class="ledger__desc">A self-hosted pipeline that runs on my own hardware behind
+            a private network and never sends an image anywhere. It detects faces and produces
+            embeddings, then scores candidate matches against a confidence model that only
+            reports a match when more than one piece of evidence agrees. The published
+            libraries would not build on my Python version, so I reimplemented the face
+            detector and the embedding model directly in ONNX and checked them against the
+            originals. Roughly 4,900 lines including the test suite.</p>
+            <ul class="ledger__artefacts">
+              <li>Python, FastAPI, SQLAlchemy</li>
+              <li>ONNX face detection &amp; embedding</li>
+              <li>15-table schema, Alembic</li>
+              <li>async job queue, rate limiting</li>
+              <li>pytest suite</li>
+              <li>private-network only</li>
+            </ul>
+          </div>
+          <p class="status status--built ledger__status">Built, prototype</p>
         </div>
       </li>
 
