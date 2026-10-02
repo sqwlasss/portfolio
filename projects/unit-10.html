@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 10: Database Development | Cristian Scebec</title>
+<meta name="description" content="The brief for a relational appointment system for a GP practice. Handed out 1 May 2026 and not yet built, so this page sets out the requirements only.">
+<meta name="author" content="Cristian Scebec">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unit 10: Database Development | Cristian Scebec">
+<meta property="og:description" content="The brief for a relational appointment system for a GP practice. Handed out 1 May 2026 and not yet built, so this page sets out the requirements only.">
+<meta property="og:image" content="../assets/images/u13-site-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="shell site-nav__inner">
+    <a class="brand" href="../index.html">Cristian Scebec</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <ul class="nav-list" id="primary-navigation">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html" aria-current="page">Work</a></li>
+      <li><a href="../achievements.html">Achievements</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="unit-header">
+  <div class="shell">
+    <p class="breadcrumb"><a href="../projects.html">Work</a> / Unit 10</p>
+    <span class="unit-header__unit">Unit 10 / Database Development</span>
+    <h1>An appointment system for a GP practice</h1>
+    <p class="unit-header__sub">Handed out on 1 May 2026 and due on 24 May 2026. Nothing has
+    been built yet, so this page is the brief and nothing more.</p>
+    <p class="status status--studied">Briefed, not yet built</p>
+  </div>
+</header>
+
+<div class="section">
+  <div class="shell">
+    <div class="unit-layout">
+
+      <div>
+
+        <div class="callout callout--todo">
+          <p class="callout__title">Read this first</p>
+          <p>There is no database, no design documentation and no submitted work for this unit
+          anywhere in my portfolio. Everything below is what the assignment asks for, written
+          in the future tense, because that is all that is true today. This page will be
+          rewritten with the actual work once it exists.</p>
+        </div>
+
+        <section class="unit-section">
+          <h2>The scenario</h2>
+          <div class="prose">
+            <p>An established NHS practice in Crawley with <strong>five doctors</strong> and
+            <strong>about 300 patients</strong> currently keeps patient and appointment
+            information on a mix of paper and spreadsheets. A planned reorganisation of health
+            services in the area will mean more patients and more doctors, so the managers have
+            decided to upgrade.</p>
+            <p>They are deliberately not replacing everything at once. They want to start with
+            the appointment system, because it lets staff get used to new software in an area
+            of their work that has a limited risk to patient safety. My role in the scenario is
+            an IT employee of the local health authority, asked to develop that system.</p>
+            <p>This is a coursework scenario, not a real NHS practice, and no work has been
+            done for any real health organisation. Any data set I build for it will use
+            obviously fictional names.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>The four tasks</h2>
+          <div class="prose">
+            <ol>
+              <li><strong>Investigate how databases are used.</strong> Look at two databases
+              designed for different purposes and present the strengths and weaknesses of
+              both, as a PowerPoint with notes. The brief suggests health, employment,
+              agencies, sale of goods, libraries and police as example domains.</li>
+              <li><strong>Design the database.</strong> Table designs, an entity relationship
+              diagram, validation and verification procedures, forms, queries, reports, and a
+              test plan with test data.</li>
+              <li><strong>Develop and test it.</strong> Build it, populate it, work through the
+              test plan, record the faults and how they were resolved, demonstrate it to my
+              tutor and record the feedback.</li>
+              <li><strong>Review it.</strong> Evaluate the finished database and make at least
+              three recommendations for improvements that were not implemented.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>What has to be in it</h2>
+          <div class="table-scroll">
+            <table class="evidence-table">
+              <caption>The hard numbers from the brief, split between what has to be designed
+              and what has to be built.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Item</th>
+                  <th scope="col">Design (Task 2)</th>
+                  <th scope="col">Build (Task 3)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Tables</th>
+                  <td>At least 2, with attribute names, sizes, formats and data types</td>
+                  <td>At least 2, with validation rules</td>
+                </tr>
+                <tr>
+                  <th scope="row">Relationships</th>
+                  <td>An ERD containing at least one one-to-many relationship</td>
+                  <td>Defined primary and foreign keys</td>
+                </tr>
+                <tr>
+                  <th scope="row">Records</th>
+                  <td>A data set of at least 50 records to import</td>
+                  <td>Tables populated with at least 50 records between them</td>
+                </tr>
+                <tr>
+                  <th scope="row">Data-entry forms</th>
+                  <td>At least 2, for patients and appointments</td>
+                  <td>At least 2</td>
+                </tr>
+                <tr>
+                  <th scope="row">Main menu form</th>
+                  <td>One, reaching at least 2 sub-forms plus queries and reports</td>
+                  <td>One, with options to reach the other forms, queries and reports</td>
+                </tr>
+                <tr>
+                  <th scope="row">Queries</th>
+                  <td>At least 5, extracting meaningful information</td>
+                  <td>Searching on one or two fields across at least 2 tables, using
+                  relational and logical operators and wildcards</td>
+                </tr>
+                <tr>
+                  <th scope="row">Reports</th>
+                  <td>At least 3, presenting meaningful information</td>
+                  <td>With titles, page layouts, colours, selected fields, date and time,
+                  grouping, introductions and images</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sorting</th>
+                  <td class="muted">—</td>
+                  <td>Single and multiple fields, alphabetic or numeric, ascending or
+                  descending</td>
+                </tr>
+                <tr>
+                  <th scope="row">Validation</th>
+                  <td>Validation and verification procedures documented</td>
+                  <td>Error messages from validation and verification checks on data, queries,
+                  reports and the interface</td>
+                </tr>
+                <tr>
+                  <th scope="row">Testing</th>
+                  <td>A test plan with test data</td>
+                  <td>Worked through, with issues found, how they were resolved, and versions
+                  documented</td>
+                </tr>
+                <tr>
+                  <th scope="row">Automation</th>
+                  <td class="muted">—</td>
+                  <td>Automating tasks, for example using macros</td>
+                </tr>
+                <tr>
+                  <th scope="row">Recommendations</th>
+                  <td class="muted">—</td>
+                  <td>At least 3 improvements identified but not implemented</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>One decision the brief leaves to me</h2>
+          <div class="prose">
+            <p>The brief never names a database product. It asks for tables, forms, sub-forms,
+            a main menu form, queries, reports, macros, primary and foreign keys, an entity
+            relationship diagram, wildcards, and relational and logical operators, and it
+            leaves the tool open. The only software it names anywhere is PowerPoint, for the
+            Task 1 presentation.</p>
+            <p>What it does ask is that I reason about it: one of the Task 2 constraints is to
+            <q>consider the database constraints, e.g. software availability and whether this
+            will have an impact on developing the relational database and whether there are any
+            alternatives for developing the same solution.</q></p>
+            <p>So the choice, and the justification for it, is part of the work. I have not
+            made it yet, and I am not going to name a product here as though I had.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="unit-rail">
+        <h2>Unit details</h2>
+        <dl class="meta-list">
+          <dt>Unit</dt>
+          <dd>Unit 10: Database Development</dd>
+
+          <dt>Assignment</dt>
+          <dd>Database for NHS, Crawley</dd>
+
+          <dt>Scenario</dt>
+          <dd>A GP practice with five doctors and about 300 patients. A coursework scenario,
+          not a real organisation.</dd>
+
+          <dt>Assessor</dt>
+          <dd>Rupika Bawa</dd>
+
+          <dt>Handed out</dt>
+          <dd>1 May 2026</dd>
+
+          <dt>Deadline</dt>
+          <dd>24 May 2026</dd>
+
+          <dt>Tasks</dt>
+          <dd>Four: investigate, design, develop and test, review.</dd>
+
+          <dt>Status</dt>
+          <dd>Brief only. No design work, no database and no submitted evidence.</dd>
+        </dl>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="site-footer__grid">
+      <div>
+        <h2>Cristian Scebec</h2>
+        <p>BTEC Level 2 First Extended Certificate in Information and Creative Technology. Looking for an IT apprenticeship.</p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Work</a></li>
+          <li><a href="../achievements.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:scebec.cristian@gmail.com">scebec.cristian@gmail.com</a></li>
+          <li><a href="https://github.com/sqwlasss" rel="noopener noreferrer" target="_blank">github.com/sqwlasss</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <p>&copy; 2026 Cristian Scebec.</p>
+      <p>Built by hand in HTML, CSS and JavaScript for Unit 3: A Digital Portfolio.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

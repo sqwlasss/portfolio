@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 12: Software Development | Cristian Scebec</title>
+<meta name="description" content="Reading two VB.NET Windows Forms programs closely enough to find and fix three defects, and writing up what I would change about how they were built.">
+<meta name="author" content="Cristian Scebec">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unit 12: Software Development | Cristian Scebec">
+<meta property="og:description" content="Reading two VB.NET Windows Forms programs closely enough to find and fix three defects, and writing up what I would change about how they were built.">
+<meta property="og:image" content="../assets/images/u12-frmdiscount-fix.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="shell site-nav__inner">
+    <a class="brand" href="../index.html">Cristian Scebec</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <ul class="nav-list" id="primary-navigation">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html" aria-current="page">Work</a></li>
+      <li><a href="../achievements.html">Achievements</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="unit-header">
+  <div class="shell">
+    <p class="breadcrumb"><a href="../projects.html">Work</a> / Unit 12</p>
+    <span class="unit-header__unit">Unit 12 / Software Development</span>
+    <h1>Currency Exchange Calculator: reading and debugging two VB.NET programs</h1>
+    <p class="unit-header__sub">Taking two supplied Windows Forms programs apart to see how
+    they work, rebuilding them in Visual Studio, finding three defects, and writing up what I
+    would change about how they were put together.</p>
+    <p class="status status--designed">Analysed and designed</p>
+  </div>
+</header>
+
+<div class="section">
+  <div class="shell">
+    <div class="unit-layout">
+
+      <div>
+
+        <section class="unit-section">
+          <h2>What this page is, and is not</h2>
+          <div class="prose">
+            <p>The wider brief for this unit is a currency exchange calculator for
+            <strong>Sussex Software Solutions Limited</strong>, building for a local travel
+            agent. The program has to convert between pounds and a foreign currency in both
+            directions, let the user edit the exchange rates, and show the converted amount
+            alongside the rate that produced it.</p>
+            <p><strong>I have not built that program.</strong> What I completed is the first
+            assignment, which is an analysis of two supplied VB.NET programs: how they work,
+            what language constructs they use, and how good the code is. That is real work and
+            I am pleased with it, but a page claiming a finished currency converter would be
+            describing something that does not exist.</p>
+            <p>I did write, build, debug and run VB.NET for this: I rebuilt both supplied
+            programs in Visual Studio, corrected them and ran them, which is how the
+            screenshots on this page exist.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>The two programs</h2>
+
+          <h3>Program 1: <code>frmDiscount</code></h3>
+          <div class="prose">
+            <p>A discount calculator. The user types an amount and a rate, clicks Calculate,
+            and the result appears. It declares <code>amount</code>,
+            <code>discount_rate</code> and <code>result</code> as <code>Decimal</code>, reads
+            both text boxes through <code>CDec</code>, multiplies, and writes the answer back
+            to a third text box. The whole program is one event handler,
+            <code>btnCalculate_Click</code>, bound with
+            <code>Handles btnCalculate.Click</code>.</p>
+          </div>
+
+          <ul class="gallery">
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u12-frmdiscount-fix.jpg"
+                      data-caption="The frmDiscount source in Visual Studio, showing my comment reading CHANGED: variable name was wrong (rate) above the corrected assignment, with the original line preserved beside it.">
+                <img src="../assets/images/u12-frmdiscount-fix.jpg"
+                     alt="VB.NET source for frmDiscount in Visual Studio with a comment marking the wrong variable name and the corrected line below it"
+                     width="974" height="385" loading="lazy">
+                <span class="gallery__cap">frmDiscount with my correction annotated in place.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u12-frmdiscount-run.jpg"
+                      data-caption="The discount calculator running, with an amount and a rate entered and the calculated result displayed.">
+                <img src="../assets/images/u12-frmdiscount-run.jpg"
+                     alt="The discount calculator Windows Form running, with amount and rate fields filled in and a result shown"
+                     width="1100" height="477" loading="lazy">
+                <span class="gallery__cap">The same program running after the fix.</span>
+              </button>
+            </li>
+          </ul>
+
+          <h3>Program 2: <code>frmSelection</code></h3>
+          <div class="prose">
+            <p>A sales bonus calculator. It reads a sales total and walks an
+            <code>If … ElseIf … Else</code> ladder to decide which bonus message to show:
+            above 150,000 pays 12,000; 90,000 to 149,999 pays 8,000; 50,000 to 89,999 pays
+            5,000; anything below pays nothing.</p>
+          </div>
+
+          <ul class="gallery">
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u12-frmselection-fix.jpg"
+                      data-caption="The corrected frmSelection source: the event handler bound with Handles btnSubmit.Click, and the three bonus bands written as ElseIf with corrected identifiers and boundary values.">
+                <img src="../assets/images/u12-frmselection-fix.jpg"
+                     alt="VB.NET source for frmSelection in Visual Studio showing the corrected event handler binding and the three ElseIf bonus bands"
+                     width="1100" height="425" loading="lazy">
+                <span class="gallery__cap">frmSelection after all three corrections.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u12-frmselection-run.jpg"
+                      data-caption="The sales bonus program running, with a sales total entered and the resulting bonus message displayed.">
+                <img src="../assets/images/u12-frmselection-run.jpg"
+                     alt="The sales bonus Windows Form running, showing a bonus message for the sales total entered"
+                     width="1048" height="434" loading="lazy">
+                <span class="gallery__cap">Running, with a bonus band matched.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u12-designer.jpg"
+                      data-caption="The Visual Studio form designer, showing the controls laid out on the form before any code runs.">
+                <img src="../assets/images/u12-designer.jpg"
+                     alt="The Visual Studio form designer with text boxes, labels and a button laid out on a Windows Form"
+                     width="643" height="521" loading="lazy">
+                <span class="gallery__cap">Building the form in the designer.</span>
+              </button>
+            </li>
+          </ul>
+        </section>
+
+        <section class="unit-section">
+          <h2>The three defects I found</h2>
+          <div class="prose">
+            <p>I annotated each one in the code itself, keeping the original line beside the
+            correction so the change is readable rather than just applied.</p>
+          </div>
+
+          <h3>1. A variable the calculation never sees</h3>
+          <div class="prose">
+            <p>The declaration line creates <code>amount</code>, <code>discount_rate</code> and
+            <code>result</code>. But the assignment underneath it reads the rate into
+            <code>rate</code>, which is never declared anywhere.</p>
+            <ul>
+              <li><strong>Before:</strong> <code>rate = CDec(txtRate.Text)</code></li>
+              <li><strong>After:</strong> <code>discount_rate = CDec(txtRate.Text)</code></li>
+            </ul>
+            <p>This is the one I like, because nothing about it looks broken.
+            <code>discount_rate</code> simply stays at its default of zero, so
+            <code>result = amount * discount_rate</code> is always zero. The program runs, the
+            button works, and every answer is silently wrong.</p>
+          </div>
+
+          <h3>2. An event handler bound to nothing</h3>
+          <div class="prose">
+            <ul>
+              <li><strong>Before:</strong> <code>Handles btnSubmitClick</code></li>
+              <li><strong>After:</strong> <code>Handles btnSubmit.Click</code></li>
+            </ul>
+            <p>A <code>Handles</code> clause needs the control and the event separated by a
+            dot. Without it the compiler cannot resolve the binding, so the Submit button is
+            wired to nothing and clicking it does not run the code.</p>
+          </div>
+
+          <h3>3. Three faults in one line</h3>
+          <div class="prose">
+            <ul>
+              <li><strong>Before:</strong>
+              <code>Else If Sales_ Total &gt;= 50000 And Sales_ Total &lt;= 89000 Then</code></li>
+              <li><strong>After:</strong>
+              <code>ElseIf Sales_Total &gt;= 50000 And Sales_Total &lt;= 89999 Then</code></li>
+            </ul>
+            <p>The keyword was written <code>Else If</code> with a space, which VB.NET reads as
+            a nested <code>If</code> and leaves the block structure unbalanced. The identifier
+            had a stray space in it, <code>Sales_ Total</code>, which will not compile. And the
+            upper bound said 89,000 while the comment directly above it said the band ran to
+            89,999, so a sales total of 89,500 fell through to the bottom branch and paid
+            nothing.</p>
+            <p>My written note on this fix only mentions the first two. The boundary value is
+            in the corrected code but I never said why I changed it, which I should have.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>Language constructs I identified</h2>
+          <div class="table-scroll">
+            <table class="evidence-table">
+              <caption>What each program uses, and where.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Construct</th>
+                  <th scope="col">Where it appears</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Variables and data types</th><td><code>Decimal</code> for money in Program 1; <code>Integer</code> for the sales total in Program 2</td></tr>
+                <tr><th scope="row">Reserved words</th><td><code>Public</code>, <code>Class</code>, <code>Private</code>, <code>Sub</code>, <code>Dim</code>, <code>As</code>, <code>If</code>, <code>Then</code>, <code>ElseIf</code>, <code>Else</code>, <code>End</code>, <code>Handles</code></td></tr>
+                <tr><th scope="row">Subroutines</th><td><code>btnCalculate_Click</code> and <code>btnSubmit_Click</code>, each a <code>Private Sub</code></td></tr>
+                <tr><th scope="row">Selection</th><td>The <code>If … ElseIf … Else</code> ladder of bonus bands in Program 2</td></tr>
+                <tr><th scope="row">Event handling</th><td>Both programs are event-driven and do nothing until their button is clicked</td></tr>
+                <tr><th scope="row">Input conversion</th><td><code>CDec</code> converting text box contents to <code>Decimal</code></td></tr>
+                <tr><th scope="row">Operators</th><td>Multiplication in Program 1; relational and <code>And</code> comparisons in Program 2</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="prose">
+            <p>One correction to my own write-up: I listed <code>CDec</code> under basic string
+            handling. It is not. <code>CDec</code> converts a value to a decimal; string
+            handling is concatenation, length and substrings. Neither program does any of
+            that.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>How good is the code?</h2>
+
+          <div class="prose">
+            <h3>Efficiency and performance</h3>
+            <ul>
+              <li>Both programs are efficient due to simple logic.</li>
+              <li>Calculations and comparisons execute instantly.</li>
+              <li>No unnecessary processing or memory usage.</li>
+              <li>Performance is suitable for small-scale applications.</li>
+            </ul>
+
+            <h3>Maintainability</h3>
+            <ul>
+              <li>Poor variable naming causes confusion, for example
+              <code>discount_rate</code> against <code>rate</code>.</li>
+              <li>Logic is tightly coupled to the user interface.</li>
+              <li>No reusable functions or modular structure.</li>
+              <li>Errors are harder to detect due to lack of validation.</li>
+              <li>Code would be difficult to scale or extend.</li>
+            </ul>
+
+            <h3>Usability</h3>
+            <ul>
+              <li>Simple and easy-to-use interface.</li>
+              <li>No guidance or feedback for incorrect input.</li>
+              <li>Application may crash if invalid data is entered.</li>
+              <li>Output is not formatted clearly for users.</li>
+            </ul>
+
+            <h3>What I would change</h3>
+            <ul>
+              <li>Separate calculation logic from interface code.</li>
+              <li>Fix the variable naming inconsistency.</li>
+              <li>Add input validation using <code>Decimal.TryParse</code>.</li>
+              <li>Prevent program crashes from invalid input.</li>
+              <li>Format output to two decimal places.</li>
+              <li>Add meaningful error messages.</li>
+            </ul>
+            <p><code>Decimal.TryParse</code> is the one I would do first. <code>CDec</code>
+            throws when it is handed something that is not a number, so typing a letter into
+            the amount box crashes the program. <code>TryParse</code> returns false instead of
+            throwing, which turns a crash into a message.</p>
+          </div>
+
+          <figure class="figure">
+            <img src="../assets/images/u12-flowchart.jpg"
+                 alt="My hand-drawn flowchart for the discount calculator: start, input amount and rate, a decision asking whether the Calculate button was clicked, then calculate result equals amount times discount rate, display the result, and end"
+                 width="483" height="718" loading="lazy">
+            <figcaption>My flowchart for Program 1. The decision node is the button click,
+            which is what makes the program event-driven rather than sequential.</figcaption>
+          </figure>
+        </section>
+
+        <section class="unit-section">
+          <h2>What is not evidenced here</h2>
+          <div class="prose">
+            <p>The second assignment covers the design work for the currency calculator itself:
+            a problem definition, screen designs, navigation, data structures, validation and
+            error handling, a mapping of which controls respond to which events, a data
+            dictionary, pseudocode, a test plan with test data, alternatives and a
+            justification.</p>
+            <p>None of it is in this portfolio, and neither is any developed and tested
+            program. I am not going to describe requirements as though they were
+            deliverables.</p>
+          </div>
+
+          <div class="callout callout--todo">
+            <p class="callout__title">Three things to sort out</p>
+            <ul>
+              <li><strong>Find out whether my Part 2 work exists.</strong> I work on a college
+              network drive that is not part of this portfolio folder, so the design work may
+              be sitting there. If it does exist it belongs on this page.</li>
+              <li><strong>The dates on the Part 2 brief contradict each other.</strong> It is
+              printed as issued 18 March 2025 with a final deadline of 1 March 2025, which is
+              seventeen days before it was handed out. One of the two is a typo on the brief
+              itself and I need to check which.</li>
+              <li><strong>The glossary slides in my deck carry no attribution.</strong> They
+              use <code>==</code> and <code>!=</code> for comparison and index strings as
+              <code>text[0:6]</code>, none of which is VB.NET, so they read as generic
+              teaching material rather than my own writing. If they came from a resource I
+              should reference it, which is what I do everywhere else.</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="unit-rail">
+        <h2>Unit details</h2>
+        <dl class="meta-list">
+          <dt>Unit</dt>
+          <dd>Unit 12: Software Development</dd>
+
+          <dt>Project</dt>
+          <dd>Currency Exchange Calculator</dd>
+
+          <dt>Client scenario</dt>
+          <dd>Sussex Software Solutions Limited, building for a local travel agent. A
+          coursework scenario, not a real client.</dd>
+
+          <dt>Assessor</dt>
+          <dd>Sean Farrelly</dd>
+
+          <dt>Part 1 issued</dt>
+          <dd>20 January 2025</dd>
+
+          <dt>Part 1 deadline</dt>
+          <dd>14 February 2025</dd>
+
+          <dt>Part 2 dates</dt>
+          <dd>Printed as issued 18/03/2025, deadline 01/03/2025. The brief contradicts
+          itself.</dd>
+
+          <dt>Language</dt>
+          <dd>VB.NET, Windows Forms, Visual Studio</dd>
+
+          <dt>Status</dt>
+          <dd>Part 1 analysis completed. Part 2 design and the developed program are not
+          evidenced here. No grade recorded.</dd>
+
+          <dt>Evidence held</dt>
+          <dd>Analysis presentation with annotated source, running-program screenshots and a
+          flowchart.</dd>
+        </dl>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button class="lightbox__close" type="button">Close</button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" alt="">
+    <figcaption class="lightbox__cap"></figcaption>
+  </figure>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="site-footer__grid">
+      <div>
+        <h2>Cristian Scebec</h2>
+        <p>BTEC Level 2 First Extended Certificate in Information and Creative Technology. Looking for an IT apprenticeship.</p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Work</a></li>
+          <li><a href="../achievements.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:scebec.cristian@gmail.com">scebec.cristian@gmail.com</a></li>
+          <li><a href="https://github.com/sqwlasss" rel="noopener noreferrer" target="_blank">github.com/sqwlasss</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <p>&copy; 2026 Cristian Scebec.</p>
+      <p>Built by hand in HTML, CSS and JavaScript for Unit 3: A Digital Portfolio.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

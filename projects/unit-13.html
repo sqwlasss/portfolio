@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 13: Website Development | Cristian Scebec</title>
+<meta name="description" content="Researching two websites, designing an eight-screen storyboard, then building and testing an eight-page shop site for a mobile phone retailer.">
+<meta name="author" content="Cristian Scebec">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unit 13: Website Development | Cristian Scebec">
+<meta property="og:description" content="Researching two websites, designing an eight-screen storyboard, then building and testing an eight-page shop site for a mobile phone retailer.">
+<meta property="og:image" content="../assets/images/u13-site-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="shell site-nav__inner">
+    <a class="brand" href="../index.html">Cristian Scebec</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <ul class="nav-list" id="primary-navigation">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html" aria-current="page">Work</a></li>
+      <li><a href="../achievements.html">Achievements</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="unit-header">
+  <div class="shell">
+    <p class="breadcrumb"><a href="../projects.html">Work</a> / Unit 13</p>
+    <span class="unit-header__unit">Unit 13 / Website Development</span>
+    <h1>An eight-page shop website, researched, built and tested</h1>
+    <p class="unit-header__sub">Four tasks over four months: compare two real websites, design
+    an eight-screen storyboard for a mobile phone shop, build it, then test it and review it
+    against the design.</p>
+    <p class="status status--built">Built and tested</p>
+  </div>
+</header>
+
+<div class="section">
+  <div class="shell">
+    <div class="unit-layout">
+
+      <div>
+
+        <section class="unit-section">
+          <h2>The brief</h2>
+          <div class="prose">
+            <p>I was set the role of a junior web developer building a website for
+            <strong>MobileWorldStation</strong>, a mobile phone shop in West Sussex. It is a
+            coursework scenario rather than a real paying client, and I have not invented any
+            contact details for the business.</p>
+            <p>From my own analysis of what the site needed:</p>
+            <ul>
+              <li><strong>Purpose:</strong> promote and sell mobile phones, accessories and
+              services.</li>
+              <li><strong>Audience:</strong> the general public interested in mobile
+              technology, aged 16 to 60. The brief only says <q>anyone who is interested in
+              buying mobile phones</q>, so the age range is my own reading of who would
+              actually use the site.</li>
+              <li><strong>User needs:</strong> easy navigation and fast loading; clear product
+              information and pricing; multimedia content to engage users; interactive
+              features like feedback forms; and access to external resources and community
+              forums.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>Task 1: comparing two real websites</h2>
+          <div class="prose">
+            <p>Before designing anything I reviewed two websites in the same industry and
+            wrote up how their features affect presentation, usability, accessibility and
+            performance. I chose <a href="https://godotengine.org/" target="_blank" rel="noopener noreferrer">godotengine.org</a>
+            and <a href="https://www.unrealengine.com/en-US" target="_blank" rel="noopener noreferrer">unrealengine.com</a>,
+            because they sell the same kind of thing to the same kind of person and do it in
+            almost opposite ways.</p>
+          </div>
+
+          <ul class="gallery">
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-research-godot.jpg"
+                      data-caption="The Godot Engine home page: a dark, mostly text-based layout with blue accents, a large Download button and a Donate button in the main navigation. Screenshot captured for Unit 13 Task 1.">
+                <img src="../assets/images/u13-research-godot-card.jpg"
+                     alt="The Godot Engine home page, a dark minimal layout with blue accents and a prominent Download button"
+                     width="760" height="419" loading="lazy">
+                <span class="gallery__cap">godotengine.org: minimal, dark, no login needed.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-research-unreal.jpg"
+                      data-caption="The Unreal Engine home page: large cinematic imagery, a sticky navigation bar, a language switcher, sign-in and a prominent download call to action. Screenshot captured for Unit 13 Task 1.">
+                <img src="../assets/images/u13-research-unreal-card.jpg"
+                     alt="The Unreal Engine home page, showing large cinematic imagery behind a sticky navigation bar with sign-in and download buttons"
+                     width="760" height="409" loading="lazy">
+                <span class="gallery__cap">unrealengine.com: cinematic, personalised, heavy.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-research-godot-docs.jpg"
+                      data-caption="A content section of the Godot site showing the uniform page layout and predictable section structure I noted in my review.">
+                <img src="../assets/images/u13-research-godot-docs.jpg"
+                     alt="A content section of the Godot Engine site showing its uniform layout and clear headings"
+                     width="1200" height="603" loading="lazy">
+                <span class="gallery__cap">Godot: uniform layout, predictable sections.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-research-unreal-news.jpg"
+                      data-caption="Unreal Engine news cards below the sticky navigation bar, which I used as evidence for the sticky navigation and cinematic visuals points in my review.">
+                <img src="../assets/images/u13-research-unreal-news.jpg"
+                     alt="Unreal Engine news cards sitting below the sticky navigation bar"
+                     width="1200" height="603" loading="lazy">
+                <span class="gallery__cap">Unreal: sticky nav and image-led content blocks.</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="table-scroll">
+            <table class="evidence-table">
+              <caption>The eight features I compared, in the order the brief lists them.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Feature</th>
+                  <th scope="col">Godot Engine</th>
+                  <th scope="col">Unreal Engine</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Action buttons and hot spots</th>
+                  <td>Prominent Download and Donate buttons; navigation links to
+                  documentation, community and the asset library.</td>
+                  <td>Download and Learn More buttons; interactive sections with hover effects
+                  and embedded videos.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Templates</th>
+                  <td>Downloadable sample projects and templates through the asset library.</td>
+                  <td>Sample projects such as Lyra Starter Game and City Sample.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Email links</th>
+                  <td>A contact address published for sponsorship and enquiries.</td>
+                  <td>Contact forms and enterprise enquiry options; no direct email links
+                  shown.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Registration and logins</th>
+                  <td>No login system for general users; open access to resources.</td>
+                  <td>Sign-in for personalised access, downloads and community features.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Forms</th>
+                  <td>Donation form; bug reporting and documentation contribution forms.</td>
+                  <td>Enterprise contact forms; learning registration and support requests.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Accessibility</th>
+                  <td>Accessibility improvements in Godot 4.5, including screen reader support
+                  through AccessKit and descriptions on interface elements.</td>
+                  <td>No explicit accessibility statement on the site itself.</td>
+                </tr>
+                <tr>
+                  <th scope="row">E-commerce facilities</th>
+                  <td>Asset library offers free tools and templates; no direct sales.</td>
+                  <td>A marketplace offering free and paid assets.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Online forums</th>
+                  <td>Community section links to forums and contribution guides.</td>
+                  <td>Active forums for developers, creators and learners.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>What each site does well, and badly</h3>
+
+          <ul class="card-grid card-grid--wide">
+            <li class="card">
+              <h4 class="card__title">Godot Engine</h4>
+              <p class="card__meta">Strengths</p>
+              <ul>
+                <li>Simplicity and speed: a minimalist design loads fast and is easy to
+                navigate, especially on a slow connection.</li>
+                <li>Open access: no login needed to download the engine or read the
+                documentation.</li>
+                <li>Community focused: forums, contribution guides and transparency.</li>
+              </ul>
+              <p class="card__meta flow-top">Weaknesses</p>
+              <ul>
+                <li>Limited visual appeal: sparse animation or interactive demos may feel
+                underwhelming to a new visitor.</li>
+                <li>No built-in text scaling: readers with visual impairments have to rely on
+                browser settings.</li>
+                <li>No account personalisation, so no saved preferences.</li>
+              </ul>
+            </li>
+            <li class="card">
+              <h4 class="card__title">Unreal Engine</h4>
+              <p class="card__meta">Strengths</p>
+              <ul>
+                <li>High-end presentation: rich visuals, embedded video and dynamic
+                transitions.</li>
+                <li>Personalised experience: a login system gives tailored access to
+                downloads, learning paths and community tools.</li>
+                <li>Marketplace integration sits neatly inside the rest of the site.</li>
+              </ul>
+              <p class="card__meta flow-top">Weaknesses</p>
+              <ul>
+                <li>Heavy load time: high-resolution media may slow performance on older
+                devices or poor connections.</li>
+                <li>Overwhelming for beginners: cinematic layout and technical language can
+                intimidate.</li>
+                <li>Navigation complexity: deep menus and many subpages mean more clicks.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3>What I would fix about this research now</h3>
+          <div class="prose">
+            <p>Re-reading it to build this page, three claims in my write-up do not match my
+            own screenshots, and I would rather say so than leave them standing.</p>
+            <ul>
+              <li>I described the Unreal navigation as containing Products, Solutions,
+              Learning, Community and Support. Every screenshot I took shows Overview, Uses,
+              News, Forums, Documentation, Learning, Connect and Fab. Only Learning matches.</li>
+              <li>I wrote that the Unreal call to action is labelled <q>Download Now</q>. The
+              buttons in my own captures read <q>Get Unreal Engine</q> and <q>Download</q>.</li>
+              <li>I said the Godot home page carries an integrated Twitter/X feed. None of my
+              four captures of that page shows one; they show a Latest News block of article
+              cards.</li>
+            </ul>
+            <p>I also wrote that Unreal makes no mention of accessibility, and then put a
+            screenshot of its Text To Speech Engine Subsystem on the same slide. The image
+            contradicts the sentence.</p>
+          </div>
+
+          <figure class="figure">
+            <img src="../assets/images/u13-research-unreal-tts.jpg"
+                 alt="An Unreal Engine Blueprint node graph showing Add Default Channel, Activate Channel and Speak on Channel nodes for the Text To Speech Engine Subsystem"
+                 width="690" height="251" loading="lazy">
+            <figcaption>The screenshot that contradicts my own sentence: Unreal's Text To
+            Speech Engine Subsystem. Screenshot captured for Unit 13 Task 1.</figcaption>
+          </figure>
+
+          <div class="prose">
+            <p>Two other things worth being straight about. My deck has no conclusion slide
+            and makes no recommendation about which site is better, even though that would
+            have been the natural next step towards my own design. And there is no scoring
+            system behind the comparison: the eight features are headings, not a rubric with
+            marks.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>Task 2: designing the site</h2>
+          <div class="prose">
+            <p>The brief asked for a storyboard of at least eight panels, one per page. I drew
+            all eight, annotated with what goes where, and worked them up in two colour
+            treatments before choosing one.</p>
+          </div>
+
+          <ul class="gallery">
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-storyboard-blue.jpg"
+                      data-caption="My eight-screen storyboard in the blue, white and grey treatment: Home, Phones, Accessories, Offers, About Us, Contact and Forum, each drawn with its navigation bar and page content blocked in.">
+                <img src="../assets/images/u13-storyboard-blue-card.jpg"
+                     alt="My storyboard in blue, white and grey, showing the Home and Phones screens drawn as annotated wireframes with navigation bars and content blocks"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">Blue, white and grey: the scheme I specified.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-storyboard-orange.jpg"
+                      data-caption="The same eight-screen storyboard in an orange and dark treatment, produced as an alternative design idea.">
+                <img src="../assets/images/u13-storyboard-orange.jpg"
+                     alt="The same storyboard screens rendered in orange on a dark brown background as an alternative colour idea"
+                     width="900" height="1350" loading="lazy">
+                <span class="gallery__cap">The orange alternative I did not take forward.</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="table-scroll">
+            <table class="evidence-table">
+              <caption>The eight screens and what each one had to hold.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Page</th>
+                  <th scope="col">File</th>
+                  <th scope="col">Layout and content</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Home</th><td class="file">/index.html</td><td>Logo, welcome message, navigation menu, featured products, video banner</td></tr>
+                <tr><th scope="row">Phones</th><td class="file">/phones.html</td><td>Grid of phone models with specs, prices and images</td></tr>
+                <tr><th scope="row">Accessories</th><td class="file">/accessories.html</td><td>Product gallery with filters, for example cases, chargers, headphones</td></tr>
+                <tr><th scope="row">Services</th><td class="file">/services.html</td><td>Repairs, SIM cards and contracts, with an embedded audio explainer</td></tr>
+                <tr><th scope="row">About Us</th><td class="file">/about.html</td><td>Company history, team photos, mission statement</td></tr>
+                <tr><th scope="row">Contact</th><td class="file">/contact.html</td><td>Feedback form, map, contact details</td></tr>
+                <tr><th scope="row">Forum</th><td class="file">/forum.html</td><td>Link to external forum, brief introduction to the community</td></tr>
+                <tr><th scope="row">Offers</th><td class="file">/offers.html</td><td>Promotional video, discount table, external links to partner deals</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Styles applied consistently</h3>
+          <div class="prose">
+            <ul>
+              <li><strong>Colour:</strong> blue <code>#007BFF</code>, white
+              <code>#FFFFFF</code> and grey <code>#CCD1D6</code>.</li>
+              <li><strong>Typography:</strong> Open Sans for body text, Roboto for headings.</li>
+              <li><strong>Layout:</strong> grid-based, with a header and footer template reused
+              across every page.</li>
+              <li><strong>Buttons:</strong> rounded corners, hover effects, consistent
+              placement.</li>
+              <li><strong>Formats:</strong> HTML5, CSS3 and JavaScript.</li>
+            </ul>
+            <p>Those three hex codes are the reason this portfolio looks the way it does. I
+            reused them here, with one change: <code>#007BFF</code> on white measures 3.98:1,
+            which is below the 4.5:1 that WCAG AA asks for on body-size text, so links and
+            small text on this site use a darkened <code>#0B57D0</code> instead and
+            <code>#007BFF</code> is kept for large type and accents.</p>
+          </div>
+
+          <h3>Interactive features I specified</h3>
+          <div class="prose">
+            <ul>
+              <li>A feedback form on the Contact page.</li>
+              <li>Hover effects on product images.</li>
+              <li>Embedded video and audio.</li>
+              <li>Clickable product filters.</li>
+            </ul>
+          </div>
+
+          <h3>Where the assets came from</h3>
+          <div class="table-scroll">
+            <table class="evidence-table">
+              <caption>My table of sources. The licence column is why I could use each one.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Asset type</th>
+                  <th scope="col">Source</th>
+                  <th scope="col">Licence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Phone images</th><td>Samsung and Apple official sites</td><td>Commercial use allowed with attribution</td></tr>
+                <tr><th scope="row">Icons</th><td>Flaticon</td><td>Free with attribution</td></tr>
+                <tr><th scope="row">Audio</th><td>FreeSound</td><td>Royalty-free</td></tr>
+                <tr><th scope="row">Video</th><td>Created in-house</td><td>Original</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>My own original assets were the logo, the promotional video and the audio
+            explainer for the services page. Looking at this table again, it records the
+            source and the permission but not the individual file, the URL or the date I
+            accessed it, which is what a full reference list would need.</p>
+          </div>
+
+          <h3>The test plan</h3>
+          <div class="table-scroll">
+            <table class="evidence-table">
+              <caption>Five tests, written before the site was built.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Test</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Expected result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Navigation</th><td>Click through all menu links</td><td>All pages load correctly</td></tr>
+                <tr><th scope="row">Form submission</th><td>Submit feedback form</td><td>Confirmation message appears</td></tr>
+                <tr><th scope="row">Multimedia</th><td>Play video and audio</td><td>Smooth playback</td></tr>
+                <tr><th scope="row">Responsiveness</th><td>Resize browser</td><td>Layout adjusts correctly</td></tr>
+                <tr><th scope="row">External links</th><td>Click forum and partner links</td><td>Redirects to correct site</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Why this design, and what limited it</h3>
+          <div class="prose">
+            <blockquote class="quote">
+              <p>It balances simplicity with interactivity, ensuring fast load times and clear
+              navigation. The use of multimedia assets makes the site engaging, while forms
+              and forums encourage user interaction.</p>
+              <cite class="quote__source">My design justification</cite>
+            </blockquote>
+            <p>Three constraints shaped it:</p>
+            <ul>
+              <li><strong>Software:</strong> using free tools like VS Code, GIMP and
+              Audacity.</li>
+              <li><strong>Time:</strong> efficient layout and asset reuse to meet
+              deadlines.</li>
+              <li><strong>Budget:</strong> reliance on royalty-free and ready-made assets.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>Tasks 3 and 4: building it, testing it, reviewing it</h2>
+          <div class="prose">
+            <p>All eight pages were built, linked together and tested. This is a walkthrough
+            of the finished site.</p>
+          </div>
+
+          <figure class="figure">
+            <video controls preload="none" width="1220" height="930"
+                   poster="../assets/images/u13-walkthrough-poster.jpg"
+                   src="../assets/video/unit-13-website-walkthrough.mp4"></video>
+            <figcaption>A 25-second silent screen recording clicking through all eight pages
+            of the finished site, recorded on 16 January 2026.</figcaption>
+          </figure>
+
+          <div class="prose">
+            <p>I built it under the name <strong>TeleConnect</strong> rather than
+            MobileWorldStation. The structure is the one I storyboarded: the same eight pages,
+            the same navigation, the same blue and white scheme, plus a cart.</p>
+          </div>
+
+          <ul class="gallery">
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-site-home.jpg"
+                      data-caption="The finished home page: a full-width blue banner reading Welcome to TeleConnect with Shop Phones and View Offers buttons, above a Why Choose Us row covering Premium Quality, Warranty Protection, 24/7 Support and Best Prices.">
+                <img src="../assets/images/u13-site-home-card.jpg"
+                     alt="The finished home page with a blue welcome banner and a row of four benefit cards"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">Home: banner, calls to action, benefits row.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-site-phones.jpg"
+                      data-caption="The Phones page: a grid of product cards, each with a photograph, brand, model, price and a specification table listing screen size, RAM, storage and camera, plus Details and Add to Cart buttons.">
+                <img src="../assets/images/u13-site-phones-card.jpg"
+                     alt="The Phones page showing product cards with photographs, prices and specification tables"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">Phones: the spec grid from the storyboard.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-site-accessories.jpg"
+                      data-caption="The Accessories page: a gallery of accessory cards including a wireless charger, phone case, headphones and cable, each with a price and an Add to Cart button.">
+                <img src="../assets/images/u13-site-accessories-card.jpg"
+                     alt="The Accessories page showing a gallery of accessory cards with prices and Add to Cart buttons"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">Accessories: product gallery.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-site-services.jpg"
+                      data-caption="The Services page: three service panels covering Phone Repairs, SIM Cards and Plans, and Contracts and Upgrades, each with a feature list and a price, above a heading reading Listen to Our Services Explained.">
+                <img src="../assets/images/u13-site-services-card.jpg"
+                     alt="The Services page showing panels for phone repairs, SIM cards and plans, and contracts and upgrades"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">Services: including the audio explainer.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-site-offers.jpg"
+                      data-caption="The Offers page: a Special Offers heading over a This Month's Deals panel containing an embedded video player.">
+                <img src="../assets/images/u13-site-offers-card.jpg"
+                     alt="The Offers page with a deals panel containing an embedded video player"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">Offers: the embedded video.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-site-about.jpg"
+                      data-caption="The About Us page: an Our Story panel of three paragraphs above an Our Values section covering Our Mission, Customer First, Quality Assured and Expert Team.">
+                <img src="../assets/images/u13-site-about-card.jpg"
+                     alt="The About Us page with an Our Story panel above an Our Values section"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">About Us: story and values.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-site-contact.jpg"
+                      data-caption="The Contact page: a Send us a Message form with labelled Full Name, Email Address, Subject and Message fields, beside a panel listing email, phone and address.">
+                <img src="../assets/images/u13-site-contact-card.jpg"
+                     alt="The Contact page showing a labelled message form beside an email, phone and address panel"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">Contact: the feedback form.</span>
+              </button>
+            </li>
+            <li>
+              <button class="gallery__btn" type="button"
+                      data-full="../assets/images/u13-site-forum.jpg"
+                      data-caption="The Forum page: a Community Forum heading above member statistics and three forum categories, General Discussion, Tech Support and Tips and Tricks.">
+                <img src="../assets/images/u13-site-forum-card.jpg"
+                     alt="The Forum page showing community statistics and three forum category cards"
+                     width="760" height="471" loading="lazy">
+                <span class="gallery__cap">Forum: categories and community stats.</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="prose">
+            <p>Against the four interactive features I specified in Task 2: the feedback form
+            is on the Contact page, the product cards respond on hover, there is embedded
+            video on Offers and an audio explainer on Services, and the Accessories and Phones
+            pages have clickable filters. The cart was not in my storyboard; I added it while
+            building because a shop without one did not make sense.</p>
+            <p>What my assessor recorded about this stage:</p>
+            <blockquote class="quote">
+              <p>You prepared assets and content for the website, demonstrating awareness of
+              purpose, listing sources of assets and able to develop a website containing at
+              various eight interlinked web pages, demonstrating awareness of purpose
+              including interactive components, demonstrating awareness of user requirements
+              and taking account of usability.</p>
+              <p>You tested the website for functionality and purpose, repairing any faults,
+              and documenting changes.</p>
+              <p>As per the feedback, you improvised it further, put the evidence of the
+              received feedback from others on the quality of the website, and use it to
+              improve the website, showing awareness of user requirements.</p>
+              <p>You reviewed the extent to which the finished website meets the needs of
+              purpose and user requirements, while considering feedback from others and
+              constraints and evaluate the final website against the design and justify any
+              changes made, making recommendations for further improvements.</p>
+              <cite class="quote__source">My assessor, on Tasks 3 and 4</cite>
+            </blockquote>
+          </div>
+
+          <div class="callout callout--todo">
+            <p class="callout__title">Two things about this build I need to sort out</p>
+            <ul>
+              <li><strong>Why the brand changed.</strong> The brief and my storyboard say
+              MobileWorldStation. The site I built says TeleConnect. I know which one I built,
+              but I have not written down why I renamed it, and an assessor is entitled to
+              ask.</li>
+              <li><strong>Where the source files are.</strong> The only evidence of the built
+              site in this portfolio is the screen recording above. The HTML, CSS and
+              JavaScript are not here, and the brief asks for a digital copy of the website.
+              I need to find them and add them so this page can link to the real thing rather
+              than a video of it.</li>
+            </ul>
+            <p>Two smaller points: the site uses dollar prices and placeholder company copy
+            such as <q>since 2010</q> and <q>500K+ Happy Customers</q>, which is fine for
+            coursework but should not be read as a real trading business. And my Unit 13
+            presentation files are currently sitting in my Unit 7 coursework folder.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>Feedback on the whole unit</h2>
+          <div class="prose">
+            <blockquote class="quote">
+              <p>Cristian, Great job on your coursework! I am particularly impressed with the
+              animations you have included in your slide deck. To further enhance your
+              presentation, consider adding a title slide at the beginning that includes your
+              name and student ID. Additionally, try to review how the features of both
+              websites contribute to performance, usability, and accessibility. Providing
+              specific examples or comparisons will strengthen your research. Overall, you
+              have done an excellent job, with these small additions, your work can reach an
+              even higher standard.</p>
+              <cite class="quote__source">My assessor, on Task 1</cite>
+            </blockquote>
+
+            <blockquote class="quote">
+              <p>Cristian, your website design shows that you understand the project
+              requirements well. You included all the important components, like who will use
+              the site, what users need, a map of the site, wireframes, different design
+              ideas, a list of things you need, and a test plan. Your explanation of your
+              design choices shows you think carefully about your work. Keep putting up the
+              great work!</p>
+              <cite class="quote__source">My assessor, on Task 2</cite>
+            </blockquote>
+
+            <p>The Task 1 note asked me to review how each site's features affect performance,
+            usability and accessibility with specific examples. That is the weakest part of
+            the research, and it is the same weakness as the three mismatches I listed above:
+            I described features rather than testing them. If I did Task 1 again I would open
+            both sites side by side, time them, and check the accessibility claims rather than
+            repeating them.</p>
+            <p>The <q>animations</q> the feedback praises are how the deck is built: each
+            slide carries the previous slide's blocks plus one new one, so the argument
+            assembles itself as you move through it rather than appearing all at once.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>What I would do differently</h2>
+          <div class="prose">
+            <ul>
+              <li><strong>Finish the argument.</strong> Task 1 ends with two lists of
+              strengths and weaknesses and no conclusion. The whole point of comparing two
+              sites was to decide what to carry into my own, and I never wrote that down.</li>
+              <li><strong>Test the claims I make.</strong> Three of my statements are
+              contradicted by my own screenshots, which would not have survived a single
+              check.</li>
+              <li><strong>Reference properly.</strong> My table of sources records where
+              things came from but not which file or when, which makes it hard to verify.</li>
+              <li><strong>Record test results, not just tests.</strong> My test plan lists
+              what to check and what should happen, but has no column for what actually
+              happened.</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="unit-rail">
+        <h2>Unit details</h2>
+        <dl class="meta-list">
+          <dt>Unit</dt>
+          <dd>Unit 13: Website Development</dd>
+
+          <dt>Assignment</dt>
+          <dd>Mobile World Station Website</dd>
+
+          <dt>Client scenario</dt>
+          <dd>A mobile phone shop in West Sussex. A coursework scenario, not a real client.</dd>
+
+          <dt>Assessor</dt>
+          <dd>Rupika Bawa</dd>
+
+          <dt>Handed out</dt>
+          <dd>29 September 2025</dd>
+
+          <dt>Task 2 due</dt>
+          <dd>14 November 2025</dd>
+
+          <dt>Deadline</dt>
+          <dd>6 February 2026</dd>
+
+          <dt>Status</dt>
+          <dd>All four tasks completed. No grade recorded.</dd>
+
+          <dt>Evidence held</dt>
+          <dd>Research presentation, design deck, site walkthrough recording, three feedback
+          notes.</dd>
+
+          <dt>Note on dates</dt>
+          <dd>A second copy of this brief in my files carries different dates: handed out
+          19 September 2025, due 9 January 2026. I have used the dates from the copy that
+          matches its own per-task deadlines.</dd>
+        </dl>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button class="lightbox__close" type="button">Close</button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" alt="">
+    <figcaption class="lightbox__cap"></figcaption>
+  </figure>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="site-footer__grid">
+      <div>
+        <h2>Cristian Scebec</h2>
+        <p>BTEC Level 2 First Extended Certificate in Information and Creative Technology. Looking for an IT apprenticeship.</p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Work</a></li>
+          <li><a href="../achievements.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:scebec.cristian@gmail.com">scebec.cristian@gmail.com</a></li>
+          <li><a href="https://github.com/sqwlasss" rel="noopener noreferrer" target="_blank">github.com/sqwlasss</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <p>&copy; 2026 Cristian Scebec.</p>
+      <p>Built by hand in HTML, CSS and JavaScript for Unit 3: A Digital Portfolio.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

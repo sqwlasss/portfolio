@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: A Digital Portfolio | Cristian Scebec</title>
+<meta name="description" content="The brief for this website: design and build a digital portfolio for an IT apprenticeship application, then test it, gather feedback and review it.">
+<meta name="author" content="Cristian Scebec">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unit 3: A Digital Portfolio | Cristian Scebec">
+<meta property="og:description" content="The brief for this website: design and build a digital portfolio for an IT apprenticeship application, then test it, gather feedback and review it.">
+<meta property="og:image" content="../assets/images/u13-site-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="shell site-nav__inner">
+    <a class="brand" href="../index.html">Cristian Scebec</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <ul class="nav-list" id="primary-navigation">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html" aria-current="page">Work</a></li>
+      <li><a href="../achievements.html">Achievements</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="unit-header">
+  <div class="shell">
+    <p class="breadcrumb"><a href="../projects.html">Work</a> / Unit 3</p>
+    <span class="unit-header__unit">Unit 3 / A Digital Portfolio</span>
+    <h1>This website</h1>
+    <p class="unit-header__sub">The brief is to design and build a digital portfolio for an IT
+    apprenticeship application, test it across browsers and systems, gather feedback, and
+    evaluate the finished thing against the original design. You are reading the build.</p>
+    <p class="status status--progress">In progress</p>
+  </div>
+</header>
+
+<div class="section">
+  <div class="shell">
+    <div class="unit-layout">
+
+      <div>
+
+        <section class="unit-section">
+          <h2>The brief</h2>
+          <div class="prose">
+            <p>The scenario is applying for an IT apprenticeship at a local company called
+            Konnekted, which the brief says recruits apprentices. The portfolio has to be
+            hosted so an employer can open it in a browser, be made of linked web pages with
+            one main page the others link to, and be split into sections by the kind of content
+            in them.</p>
+            <p>One requirement is stated twice, once in the scenario and again at the end of
+            Task 1: <q>The portfolio must include work from all your completed units in the
+            course.</q> That is why there are seven unit pages here and not just the three with
+            finished work on them.</p>
+          </div>
+          <div class="callout callout--todo">
+            <p class="callout__title">Worth being clear about</p>
+            <p>Konnekted is named in the brief as the scenario employer. I have not confirmed
+            whether it is a real local company I am applying to or a name written into the
+            assignment, and the framing of this whole site depends on which. I need to check
+            before I describe it as a genuine target employer anywhere.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>Task 1: design the portfolio</h2>
+          <div class="table-scroll">
+            <table class="evidence-table">
+              <caption>What the design document has to contain, and where I am with each
+              part.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Deliverable</th>
+                  <th scope="col">What it needs</th>
+                  <th scope="col">State</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Audience and purpose</th><td>Who the portfolio is aimed at and what it is for, with an original design that sets the application apart</td><td>Decided, not written up</td></tr>
+                <tr><th scope="row">Timeline</th><td>A project plan with a predicted finish date</td><td>Not produced</td></tr>
+                <tr><th scope="row">Storyboard</th><td>At least eight screens, showing page layout and what content each holds, and it may cover colours, fonts, moods and styles</td><td>Not produced</td></tr>
+                <tr><th scope="row">Structure chart</th><td>A diagram showing how people navigate through the portfolio</td><td>Not produced</td></tr>
+                <tr><th scope="row">Asset table</th><td>Every logo, text, image, video and audio track, with where it came from and where it is used, fully referenced</td><td>Not produced</td></tr>
+                <tr><th scope="row">Alternative solution</th><td>At least one different approach, with an explanation of why it was rejected</td><td>Not produced</td></tr>
+                <tr><th scope="row">Design justification</th><td>How the design meets its purpose, how each asset improves the experience, and how it meets the audience's needs</td><td>Not produced</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>I built before I documented, which is the wrong order and the opposite of what I
+            did for Unit 13. The design decisions below are real and I can justify all of them,
+            but they exist as a built site rather than as the design document the brief asks
+            for, and that is work still to do.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>How this site is built, and why</h2>
+          <div class="prose">
+            <p>Everything here is checkable by viewing source, which is the useful thing about
+            a portfolio being the coursework.</p>
+
+            <h3>Plain HTML, CSS and JavaScript</h3>
+            <p>No framework, no bundler, no build step, no dependencies to install. The site
+            opens correctly by double-clicking <code>index.html</code> from a folder, which
+            matters because it is an assessment deliverable that has to work wherever it is
+            put. It also means nothing between what I wrote and what the browser runs.</p>
+
+            <h3>One stylesheet, no page styles</h3>
+            <p>The version of this site I started from carried the same 194 lines of CSS
+            copy-pasted into seven separate pages, and more styling in
+            <code>style=""</code> attributes on individual elements. That is 35 kilobytes of
+            CSS that could not be cached and had to be changed in seven places at once.
+            Everything now lives in <code>assets/css/style.css</code>. No page has a
+            <code>&lt;style&gt;</code> block and no element has a style attribute.</p>
+
+            <h3>Design tokens, and a palette I can defend</h3>
+            <p>Colours, type sizes and spacing are declared once as custom properties on
+            <code>:root</code>. The brand colours are the three I specified and justified for
+            my <a href="unit-13.html">Unit 13 client site</a>: <code>#007BFF</code>,
+            <code>#FFFFFF</code> and <code>#CCD1D6</code>.</p>
+            <p>With one change. <code>#007BFF</code> on white measures 3.98:1, and WCAG AA asks
+            for 4.5:1 on body-size text, so links and small text use a darkened
+            <code>#0B57D0</code> that measures 6.4:1 while <code>#007BFF</code> keeps the large
+            display type and the accents. <code>#CCD1D6</code> is never used for text; it is
+            the colour of every rule and border on the site, which is where a light grey
+            actually works.</p>
+
+            <h3>Light and dark</h3>
+            <p>The same tokens are redeclared under
+            <code>prefers-color-scheme: dark</code>, so the site follows whatever the reader's
+            device is set to rather than forcing one.</p>
+
+            <h3>The status system</h3>
+            <p>Every unit carries one of four labels: built and tested, analysed and designed,
+            in progress, or briefed and studied. It is the organising idea of the whole site.
+            Three units have finished work and four do not, and saying which is which is more
+            persuasive than writing all seven up as though they were the same.</p>
+
+            <h3>Accessibility</h3>
+            <p>The brief for both this unit and Unit 13 treats accessibility as assessed, so it
+            is built in rather than checked at the end:</p>
+            <ul>
+              <li>A skip link, and one <code>&lt;main&gt;</code> landmark per page.</li>
+              <li>The menu button is a real <code>&lt;button&gt;</code> with
+              <code>aria-expanded</code>, so it works from the keyboard. The version I started
+              from used a <code>&lt;div&gt;</code>, which meant nobody navigating by keyboard
+              could open the navigation on a phone at all.</li>
+              <li>When the mobile menu is closed the links are <code>display: none</code>
+              rather than positioned off-screen, so they leave the tab order instead of sending
+              focus somewhere invisible.</li>
+              <li><code>aria-current="page"</code> marks the current page in the navigation,
+              not just a colour.</li>
+              <li>The image lightbox traps Tab, closes on Escape, and returns focus to whatever
+              opened it.</li>
+              <li>Visible <code>:focus-visible</code> styles on everything focusable.</li>
+              <li>Every text and background pair checked against WCAG AA.</li>
+              <li><code>prefers-reduced-motion</code> switches off the transitions and smooth
+              scrolling.</li>
+              <li>Real <code>&lt;label&gt;</code> elements on every form field, with errors
+              announced through <code>aria-describedby</code> and a live region.</li>
+            </ul>
+
+            <h3>Performance</h3>
+            <p>Every image has explicit <code>width</code> and <code>height</code> so nothing
+            jumps while the page loads, and everything below the fold is lazy-loaded. The
+            website walkthrough video was 15 MB for 25 seconds; it is now 876 KB, with a poster
+            image and <code>preload="none"</code> so it costs nothing until someone presses
+            play.</p>
+
+            <h3>Type</h3>
+            <p>Archivo for headings, Source Sans 3 for reading, and JetBrains Mono only where
+            the content is literally code: filenames, identifiers, timecodes and hex values.
+            Each has a real fallback stack so the site still sets properly with no network.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>Tasks 2 and 3: testing and reviewing</h2>
+          <div class="prose">
+            <p>Task 2 asks for a test plan covering different browsers and different computer
+            systems, worked through with faults recorded and corrected, plus user feedback
+            gathered and acted on. Task 3 asks for a written evaluation comparing the finished
+            portfolio to the original designs, justifying changes and recommending
+            improvements.</p>
+            <p>Neither is done. The brief also requires a screenshot of the folder structure
+            and for the uploaded portfolio to be witnessed by my tutor.</p>
+          </div>
+
+          <div class="callout callout--todo">
+            <p class="callout__title">Still to do before 15 May 2026</p>
+            <ul>
+              <li>The Task 1 design document: timeline, eight-screen storyboard, structure
+              chart, referenced asset table, an alternative design with reasons for rejecting
+              it, and the design justification.</li>
+              <li>A test plan covering more than one browser and more than one computer
+              system, worked through with the faults recorded and fixed.</li>
+              <li>User feedback forms, a feedback review, and the changes made because of
+              it.</li>
+              <li>The Task 3 evaluation report.</li>
+              <li>A folder-structure screenshot, and getting the upload witnessed.</li>
+              <li>Hosting. The brief says the portfolio will be on a server and reached through
+              a browser; at the moment it runs from a folder.</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="unit-rail">
+        <h2>Unit details</h2>
+        <dl class="meta-list">
+          <dt>Unit</dt>
+          <dd>Unit 3: A Digital Portfolio</dd>
+
+          <dt>Assignment</dt>
+          <dd>Design a Portfolio to Get That Job!</dd>
+
+          <dt>Scenario</dt>
+          <dd>Applying for an IT apprenticeship at Konnekted, a local company named in the
+          brief.</dd>
+
+          <dt>Assessor</dt>
+          <dd>Rupika Bawa</dd>
+
+          <dt>Handed out</dt>
+          <dd>9 February 2026</dd>
+
+          <dt>Deadline</dt>
+          <dd>15 May 2026</dd>
+
+          <dt>Tasks</dt>
+          <dd>Three: design, create and test, review.</dd>
+
+          <dt>Status</dt>
+          <dd>The site is built and being refined. The design documentation, testing, feedback
+          and evaluation are not done.</dd>
+
+          <dt>Built with</dt>
+          <dd>HTML5, CSS3, vanilla JavaScript, VS Code. No framework and no build step.</dd>
+        </dl>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="site-footer__grid">
+      <div>
+        <h2>Cristian Scebec</h2>
+        <p>BTEC Level 2 First Extended Certificate in Information and Creative Technology. Looking for an IT apprenticeship.</p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Work</a></li>
+          <li><a href="../achievements.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:scebec.cristian@gmail.com">scebec.cristian@gmail.com</a></li>
+          <li><a href="https://github.com/sqwlasss" rel="noopener noreferrer" target="_blank">github.com/sqwlasss</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <p>&copy; 2026 Cristian Scebec.</p>
+      <p>Built by hand in HTML, CSS and JavaScript for Unit 3: A Digital Portfolio.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

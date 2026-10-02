@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Cristian Scebec</title>
+<meta name="description" content="Get in touch with Cristian Scebec, a BTEC Information and Creative Technology student looking for an IT apprenticeship.">
+<meta name="author" content="Cristian Scebec">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact | Cristian Scebec">
+<meta property="og:description" content="Get in touch with Cristian Scebec, a BTEC Information and Creative Technology student looking for an IT apprenticeship.">
+<meta property="og:image" content="assets/images/u13-site-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/images/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="shell site-nav__inner">
+    <a class="brand" href="index.html">Cristian Scebec</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <ul class="nav-list" id="primary-navigation">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<section class="section">
+  <div class="shell">
+    <div class="contact-grid">
+
+      <div>
+        <h1>Get in touch</h1>
+
+        <div class="prose stack">
+          <p class="lede">I am looking for an IT apprenticeship where I can keep building
+          things and learn from people who do this professionally.</p>
+
+          <p>What I can bring on day one: I write HTML, CSS and JavaScript by hand, I have
+          built and tested an eight-page website to a client brief, I can read and debug
+          VB.NET in Visual Studio, and I plan work before I start it. Everything on this
+          site links back to the coursework that evidences it, so you can check any of it.</p>
+
+          <p>The quickest way to reach me is email. I read it every day.</p>
+        </div>
+
+        <ul class="contact-methods">
+          <li>
+            <span>Email</span>
+            <a href="mailto:scebec.cristian@gmail.com">scebec.cristian@gmail.com</a>
+          </li>
+          <li>
+            <span>GitHub</span>
+            <a href="https://github.com/sqwlasss" target="_blank" rel="noopener noreferrer">github.com/sqwlasss</a>
+          </li>
+          <li>
+            <span>CV</span>
+            <span class="muted">Available on request by email.</span>
+          </li>
+        </ul>
+
+        <div class="callout callout--todo flow-top">
+          <p class="callout__title">Still to add</p>
+          <p>Three contact details are deliberately missing rather than guessed:</p>
+          <ul>
+            <li><strong>LinkedIn.</strong> The only profile URL on file has the literal word
+            <code>undefined</code> inside its slug, which means it was captured from a page
+            before the value loaded. It is almost certainly broken, so it is not linked here.
+            I need to open my own profile and copy the real address.</li>
+            <li><strong>Phone number.</strong> The old version of this page showed
+            a number from the range reserved for use in TV and film. A real one goes here
+            once I decide whether I want it public.</li>
+            <li><strong>Where I can travel to.</strong> The old page had a template
+            placeholder here rather than a place. West Sussex and Crawley appear in my
+            coursework only as assignment scenarios, so neither is evidence of where I live or
+            can commute to.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Send me a message</h2>
+
+        <form class="form" id="contact-form" data-mailto="scebec.cristian@gmail.com">
+
+          <div class="field">
+            <label for="field-name">Your name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="field-name" name="name" data-label="Your name"
+                   autocomplete="name" required aria-describedby="field-name-error">
+            <span class="field__error" id="field-name-error"></span>
+          </div>
+
+          <div class="field">
+            <label for="field-email">Email address <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="field-email" name="email" data-label="Your email address"
+                   autocomplete="email" required aria-describedby="field-email-error">
+            <span class="field__error" id="field-email-error"></span>
+          </div>
+
+          <div class="field">
+            <label for="field-subject">Subject <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="field-subject" name="subject" data-label="A subject"
+                   required aria-describedby="field-subject-error">
+            <span class="field__error" id="field-subject-error"></span>
+          </div>
+
+          <div class="field">
+            <label for="field-message">Message <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="field-message" name="message" data-label="A message"
+                      required aria-describedby="field-message-error"></textarea>
+            <span class="field__error" id="field-message-error"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Write this message</button>
+
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="callout flow-top">
+          <p class="callout__title">What this form actually does</p>
+          <p>This is a static website. There is no server behind it, so it cannot post your
+          message anywhere. Instead it checks the fields, then opens your own email app with
+          the message already written and addressed to me. If your browser has no email app
+          set up, nothing will open, so my address is printed above for you to copy.</p>
+          <p>I would rather say that plainly than have a form that looks like it sends and
+          quietly throws your message away.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="site-footer__grid">
+      <div>
+        <h2>Cristian Scebec</h2>
+        <p>BTEC Level 2 First Extended Certificate in Information and Creative Technology. Looking for an IT apprenticeship.</p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Work</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:scebec.cristian@gmail.com">scebec.cristian@gmail.com</a></li>
+          <li><a href="https://github.com/sqwlasss" rel="noopener noreferrer" target="_blank">github.com/sqwlasss</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <p>&copy; 2026 Cristian Scebec.</p>
+      <p>Built by hand in HTML, CSS and JavaScript for Unit 3: A Digital Portfolio.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Technology Systems | Cristian Scebec</title>
+<meta name="description" content="An externally assessed unit on hardware components, how data flows through a computer, binary representation, and types of software.">
+<meta name="author" content="Cristian Scebec">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unit 2: Technology Systems | Cristian Scebec">
+<meta property="og:description" content="An externally assessed unit on hardware components, how data flows through a computer, binary representation, and types of software.">
+<meta property="og:image" content="../assets/images/u13-site-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="shell site-nav__inner">
+    <a class="brand" href="../index.html">Cristian Scebec</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <ul class="nav-list" id="primary-navigation">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects.html" aria-current="page">Work</a></li>
+      <li><a href="../achievements.html">Achievements</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="unit-header">
+  <div class="shell">
+    <p class="breadcrumb"><a href="../projects.html">Work</a> / Unit 2</p>
+    <span class="unit-header__unit">Unit 2 / Technology Systems</span>
+    <h1>What computers are made of, and how data moves through them</h1>
+    <p class="unit-header__sub">A mandatory, externally assessed unit. Like Unit 1 it has no
+    coursework, so this page sets out what the unit covers.</p>
+    <p class="status status--studied">Unit studied</p>
+  </div>
+</header>
+
+<div class="section">
+  <div class="shell">
+    <div class="unit-layout">
+
+      <div>
+
+        <section class="unit-section">
+          <h2>Why this page has no coursework on it</h2>
+          <div class="prose">
+            <p>Unit 2 is assessed by external examination. There is no assignment brief and no
+            submitted work, and an earlier version of this page invented three tasks, a grade,
+            three tutor comments, and a claim that I had used Windows and Linux for it. None of
+            that was true and all of it has gone.</p>
+          </div>
+
+          <div class="callout callout--todo">
+            <p class="callout__title">A filing mistake worth naming</p>
+            <p>There is a file in my portfolio called
+            <code>Assignment Brief/Unit 2 Assignment Brief.docx</code>. It is not a Unit 2
+            brief. It is the <a href="unit-7.html">Unit 7</a> Game Review brief, with the
+            Unit 7 assessor, the Unit 7 dates and criteria numbered 7/2A to 7/2C. It is almost
+            certainly what misled the earlier version of this page into inventing tasks for a
+            unit that has none. It needs renaming.</p>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>Learning aims</h2>
+          <div class="prose">
+            <ol>
+              <li>Understand how the components of technology systems work together.</li>
+              <li>Understand how data flows between internal components of a computer and is
+              processed to provide information.</li>
+              <li>Understand different types of software.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="unit-section">
+          <h2>What the unit covers</h2>
+
+          <h3>A: How the components of technology systems work together</h3>
+          <ul class="card-grid">
+            <li class="card">
+              <h4 class="card__title">Systems and their applications</h4>
+              <ul>
+                <li>A computer as a machine that processes digital data</li>
+                <li>A technology system as the whole collection of hardware, software, peripherals, power supplies and communication links</li>
+                <li>Uses across construction, finance, health, manufacturing (including CAD, CAM and robots) and retail</li>
+                <li>Issues: health and safety, security, environmental impact, sustainability, privacy and copyright</li>
+                <li>Why organisations keep developing their systems: competitive advantage, reduced costs, better performance</li>
+              </ul>
+            </li>
+            <li class="card">
+              <h4 class="card__title">Hardware devices</h4>
+              <ul>
+                <li>Devices: PCs, servers, laptops, tablets, consoles and other programmable devices</li>
+                <li>Input: keyboard, mouse, sensors, touch screen, microphone, scanner, digital camera</li>
+                <li>Output: printers (inkjet, laser, impact), speakers, force feedback devices, actuators, screens, projectors, robot arms</li>
+                <li>Storage: solid state, optical and magnetic</li>
+                <li>Automated systems such as self-service checkouts and production lines</li>
+                <li>Data capture devices: barcode readers, magnetic strip readers, OCR, OMR and RFID</li>
+                <li>Choosing and justifying devices for a specific user and purpose</li>
+              </ul>
+            </li>
+            <li class="card">
+              <h4 class="card__title">Networking and data transfer</h4>
+              <ul>
+                <li>LAN, WAN, PAN and mobile broadband, and what each is for</li>
+                <li>Common uses: resource sharing, data sharing, entertainment, communication</li>
+                <li>The benefits of networking, and keeping devices in a PAN in sync</li>
+                <li>Wireless transfer using Wi-Fi and Bluetooth</li>
+                <li>Cabled transfer using optical fibre, unshielded twisted pair and coaxial cable</li>
+                <li>The benefits and drawbacks of each</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3>B: How data flows inside a computer</h3>
+          <ul class="card-grid">
+            <li class="card">
+              <h4 class="card__title">Internal components</h4>
+              <ul>
+                <li>The motherboard as the printed circuit board holding the main components</li>
+                <li>The CPU: arithmetic and logic unit, control unit, registers</li>
+                <li>Memory: RAM, ROM and flash</li>
+                <li>Graphics, sound and video hardware</li>
+                <li>Heat dispersal: fans and heat sinks</li>
+                <li>Buses, and how they carry data between components</li>
+              </ul>
+            </li>
+            <li class="card">
+              <h4 class="card__title">What makes a machine feel fast</h4>
+              <ul>
+                <li>CPU and GPU features: clock speed, caches, multiple cores, heat and power consumption</li>
+                <li>Mobile devices: system-on-a-chip, CPU and GPU, battery life</li>
+                <li>How mobile systems differ from traditional platforms</li>
+                <li>Memory and storage: cache, RAM, and solid state against optical and magnetic media</li>
+                <li>Comparing specifications and their effect on the user's experience</li>
+              </ul>
+            </li>
+            <li class="card">
+              <h4 class="card__title">Analogue, digital and binary</h4>
+              <ul>
+                <li>The difference between analogue and digital transmission</li>
+                <li>Why signals are converted between the two</li>
+                <li>How data is represented in binary: bits, bytes and word length</li>
+                <li>Converting whole numbers up to 10 into binary, and 8-bit binary back to base 10</li>
+                <li>Units of storage from bit and byte up to petabyte</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3>C: Types of software</h3>
+          <ul class="card-grid">
+            <li class="card">
+              <h4 class="card__title">Software and programming languages</h4>
+              <ul>
+                <li>Software as programs directing the operation of a technology system</li>
+                <li>Custom-made against off-the-shelf, and the trade-offs of each</li>
+                <li>The hierarchy from application software down through high-level and low-level languages to machine code and hardware</li>
+                <li>High-level language styles: imperative, procedural, event-driven and object-orientated</li>
+                <li>Low-level languages: assembly and machine code</li>
+              </ul>
+            </li>
+            <li class="card">
+              <h4 class="card__title">Programming concepts</h4>
+              <ul>
+                <li>Flowchart symbols: terminators, connectors, processes and decision boxes</li>
+                <li>Reading and completing flowcharts, including missing decisions and outcomes</li>
+                <li>Worked examples including currency conversions, converting marks to grades and calculating wages with overtime</li>
+                <li>Declaration, input, output, assignment, variables (local and global), constants, subroutines and variable scope</li>
+                <li>Why code needs annotating for maintenance</li>
+                <li>Data types: character, string, integer, real and Boolean</li>
+                <li>Data structures: records and simple arrays</li>
+              </ul>
+            </li>
+            <li class="card">
+              <h4 class="card__title">Operating systems and applications</h4>
+              <ul>
+                <li>What an operating system does: file management, drivers, resource allocation and security</li>
+                <li>Utilities: disk defragmenters, firewalls and anti-virus software</li>
+                <li>Graphical against command-line interfaces</li>
+                <li>Accessibility and ease of use on desktop and mobile</li>
+                <li>Productivity applications and the benefits of using a suite</li>
+                <li>What to weigh when installing or upgrading: hardware platform, accessibility, compatibility, cost of licence and training, speed, and security features</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section class="unit-section">
+          <h2>Where this shows up in my other work</h2>
+          <div class="prose">
+            <p>The programming concepts topic is the theory directly under
+            <a href="unit-12.html">Unit 12</a>: declaration, assignment, variables, subroutines
+            and data types are exactly what I was identifying in the two VB.NET programs, and
+            event-driven is precisely the style both of them are written in. The specification
+            even names <em>currency conversions</em> as a worked flowchart example, which is
+            the Unit 12 project.</p>
+            <p>The flowchart I drew for Unit 12 uses this unit's symbols: terminators for start
+            and end, a parallelogram for input and output, a diamond for the decision, and a
+            rectangle for the process.</p>
+          </div>
+
+          <div class="callout callout--todo">
+            <p class="callout__title">One thing to confirm</p>
+            <p>The Unit 1 specification says that on the General pathway a learner completes
+            either Unit 1 or Unit 2, with only one contributing to the final grade. The Unit 2
+            specification I have says nothing about pathways at all, and the two documents come
+            from different qualification sizes. I need to confirm which of the two units counts
+            towards my qualification.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="unit-rail">
+        <h2>Unit details</h2>
+        <dl class="meta-list">
+          <dt>Unit</dt>
+          <dd>Unit 2: Technology Systems</dd>
+
+          <dt>Level</dt>
+          <dd>1 and 2</dd>
+
+          <dt>Unit type</dt>
+          <dd>Mandatory</dd>
+
+          <dt>Assessment</dt>
+          <dd>External</dd>
+
+          <dt>Guided learning hours</dt>
+          <dd class="num">30</dd>
+
+          <dt>Learning aims</dt>
+          <dd>Three: A, B and C</dd>
+
+          <dt>Status</dt>
+          <dd>Specification only. No assignment brief and no learner work, because the unit is
+          examined rather than assessed by coursework. No grade recorded.</dd>
+
+          <dt>Supports</dt>
+          <dd>The specification names this unit as supporting Units 8 to 13, including
+          <a href="unit-10.html">Unit 10</a>, <a href="unit-12.html">Unit 12</a> and
+          <a href="unit-13.html">Unit 13</a>.</dd>
+        </dl>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="site-footer__grid">
+      <div>
+        <h2>Cristian Scebec</h2>
+        <p>BTEC Level 2 First Extended Certificate in Information and Creative Technology. Looking for an IT apprenticeship.</p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Work</a></li>
+          <li><a href="../achievements.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:scebec.cristian@gmail.com">scebec.cristian@gmail.com</a></li>
+          <li><a href="https://github.com/sqwlasss" rel="noopener noreferrer" target="_blank">github.com/sqwlasss</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <p>&copy; 2026 Cristian Scebec.</p>
+      <p>Built by hand in HTML, CSS and JavaScript for Unit 3: A Digital Portfolio.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
