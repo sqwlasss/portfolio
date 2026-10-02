@@ -107,7 +107,9 @@
        ---------------------------------------------------------------------- */
     function initProjectFilters() {
         var buttons = document.querySelectorAll('.filter-btn');
-        var items = document.querySelectorAll('.ledger__item');
+        /* Scoped to .ledger--units so the live-work ledger further up this page
+           is never counted or hidden by the unit filters. */
+        var items = document.querySelectorAll('.ledger--units .ledger__item');
         var count = document.getElementById('filter-count');
         if (!buttons.length || !items.length) { return; }
 

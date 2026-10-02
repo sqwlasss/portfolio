@@ -453,6 +453,7 @@ hr {
 }
 
 .status--built { color: var(--status-built); background: var(--status-built-wash); }
+.status--live { color: var(--status-built); background: var(--status-built-wash); }
 .status--designed { color: var(--status-designed); background: var(--status-designed-wash); }
 .status--progress { color: var(--brand-ink); background: var(--brand-wash); }
 .status--studied { color: var(--status-studied); background: var(--status-studied-wash); }

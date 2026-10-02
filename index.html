@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cristian Scebec | Digital Portfolio</title>
-<meta name="description" content="I build and document small web and software projects. BTEC Information and Creative Technology student looking for an IT apprenticeship.">
+<meta name="description" content="Digital Software Development T Level (Foundation Year) student at Crawley College, looking for a 315-hour work placement. A live Shopify storefront, a self-hosted always-on stack, and a Linux GPU inference server.">
 <meta name="author" content="Cristian Scebec">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cristian Scebec | Digital Portfolio">
-<meta property="og:description" content="I build and document small web and software projects. BTEC Information and Creative Technology student looking for an IT apprenticeship.">
-<meta property="og:image" content="assets/images/u13-site-home.jpg">
+<meta property="og:description" content="Digital Software Development T Level (Foundation Year) student at Crawley College, looking for a 315-hour work placement. A live Shopify storefront, a self-hosted always-on stack, and a Linux GPU inference server.">
+<meta property="og:url" content="https://sqwlasss.github.io/portfolio/">
+<meta property="og:image" content="https://sqwlasss.github.io/portfolio/assets/images/u13-site-home.jpg">
 <meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://sqwlasss.github.io/portfolio/">
 
 <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/images/favicon-180.png">
@@ -53,11 +56,12 @@
       <p class="hero__lede">I build small things properly, and I write down how.</p>
 
       <div class="prose">
-        <p class="hero__intro">I am studying Information and Creative Technology and looking
-        for an IT apprenticeship. So far I have designed, built and tested an eight-page shop
-        website to a client brief, planned and made a ten-minute game review from a treatment
-        and storyboard through to a finished edit, and read through two VB.NET programs
-        closely enough to find and fix three defects in them.</p>
+        <p class="hero__intro">I am a first-year Digital Software Development T Level
+        (Foundation Year) student at Crawley College, looking for a 315-hour work placement.
+        Before I started it I was already building things other people use: a live art-print
+        storefront on React and Shopify, a second storefront built and waiting to go live, an
+        always-on server stack I run on a Raspberry Pi at home, and a Linux GPU server running
+        a 35-billion-parameter language model on eight gigabytes of video memory.</p>
       </div>
 
       <div class="btn-row">
@@ -66,9 +70,9 @@
       </div>
 
       <ul class="hero__meta">
-        <li>BTEC Level 2 First Extended Certificate</li>
-        <li>Information and Creative Technology</li>
-        <li>Looking for an IT apprenticeship</li>
+        <li>Digital Software Development T Level (Foundation Year)</li>
+        <li>Crawley College, 2026&ndash;27</li>
+        <li>Looking for a 315-hour work placement</li>
       </ul>
     </div>
 
@@ -80,8 +84,126 @@
 <section class="section">
   <div class="shell">
     <div class="section__head">
-      <h2 class="section__title">Three things I made</h2>
-      <p class="section__note">Not mock-ups. These are screenshots of the actual coursework.</p>
+      <h2 class="section__title">What I have running right now</h2>
+      <p class="section__note">Not coursework. Systems I built and keep alive, with real
+      constraints behind each one.</p>
+    </div>
+
+    <ul class="ledger">
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">&Oslash;BJECT 29 &mdash; art print storefront</span>
+            <h3 class="ledger__title">A live shop front built on a React and Shopify codebase</h3>
+            <p class="ledger__desc">A wall-art and homeware storefront with twenty routes:
+            catalogue filters, product pages with click-to-zoom galleries, a persistent cart,
+            a wishlist, and a full account area with order history and address management.
+            Customer accounts are Firebase; the catalogue, cart and checkout are the Shopify
+            Storefront API. Rebranded the business and deployed it to Vercel.</p>
+            <ul class="ledger__artefacts">
+              <li>React 18 &amp; Vite 6</li>
+              <li>Shopify Storefront API</li>
+              <li>Firebase auth</li>
+              <li>Tailwind &amp; shadcn/ui</li>
+              <li>20 routes, ~10,500 lines</li>
+              <li>live on Vercel</li>
+            </ul>
+          </div>
+          <p class="status status--live ledger__status">In production</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Always-on home infrastructure</span>
+            <h3 class="ledger__title">An always-on stack I run and maintain myself</h3>
+            <p class="ledger__desc">A Raspberry Pi running a Docker Compose stack with health
+            checks, restart policies and pinned versions, fronted by a node manager I wrote in
+            Flask that supervises services, probes their health, publishes Prometheus-style
+            metrics and wakes or shuts down the other machines on my network. Four devices
+            share the same working folders over a Syncthing mesh across two overlay networks,
+            reachable by key-only SSH with no inbound ports open.</p>
+            <ul class="ledger__artefacts">
+              <li>Docker &amp; Compose</li>
+              <li>Python &amp; Flask</li>
+              <li>Tailscale &amp; ZeroTier</li>
+              <li>Syncthing, 4 nodes</li>
+              <li>PowerShell &amp; Bash tooling</li>
+            </ul>
+          </div>
+          <p class="status status--live ledger__status">Running</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Local AI server &mdash; dual-booted desktop</span>
+            <h3 class="ledger__title">A 35B-parameter model running locally on 8&nbsp;GB of VRAM</h3>
+            <p class="ledger__desc">I turned a Windows desktop into a Linux inference server by
+            dual-booting it and resolving a firmware-level boot problem by hand. It now serves
+            a 35B mixture-of-experts language model at roughly 47 tokens per second, and
+            separately runs a local image generator. Both want the same eight gigabytes of
+            VRAM and the machine does not have enough memory for both, so I wrote a service
+            that switches the GPU between them on demand, plus a headless benchmark harness to
+            measure the result.</p>
+            <ul class="ledger__artefacts">
+              <li>Ubuntu 26.04, dual-boot</li>
+              <li>35B MoE, Q4 quantised</li>
+              <li>~47 tok/s, ~1.5s to first token</li>
+              <li>systemd mode-switch service</li>
+              <li>headless benchmark script</li>
+            </ul>
+          </div>
+          <p class="status status--live ledger__status">Running</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Client project &mdash; accountancy practice</span>
+            <h3 class="ledger__title">A VAT processing tool built for a real business</h3>
+            <p class="ledger__desc">My mother runs an accountancy practice and was processing
+            VAT returns by hand. I built her a web application that finds the client folders,
+            reads the bank statements and receipts out of them, and produces a finished VAT
+            workbook and report &mdash; with a dark web interface, drag-and-drop uploads, live
+            progress and a log of every run. It runs on the Raspberry Pi at home and the
+            finished work appears back in her Dropbox.</p>
+            <ul class="ledger__artefacts">
+              <li>Flask web app</li>
+              <li>PDF &amp; Excel processing</li>
+              <li>rclone &amp; Dropbox</li>
+              <li>used for real client work</li>
+            </ul>
+          </div>
+          <p class="status status--live ledger__status">In production</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="callout callout--todo flow-top">
+      <p class="callout__title">How I work with AI coding assistants</p>
+      <p>I use AI coding assistants heavily and I think that is the honest way to work now.
+      I use them to read unfamiliar code, to draft, and to get past the first version of
+      something quickly. What I do not do is hand one over unchecked. Every project above has
+      documentation recording what the assistant decided on my behalf, what is still
+      unverified, and what I would change &mdash; and I test and debug the result before it
+      goes anywhere near a user. If you would rather I worked without them on your placement,
+      tell me on day one and I will.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sunken">
+  <div class="shell">
+    <div class="section__head">
+      <h2 class="section__title">Coursework I am proud of</h2>
+      <p class="section__note">From my BTEC Information and Creative Technology course. Not
+      mock-ups &mdash; screenshots of the actual submitted work.</p>
     </div>
 
     <ul class="proof-strip">
@@ -127,8 +249,8 @@
 <section class="section section--sunken">
   <div class="shell">
     <div class="section__head">
-      <h2 class="section__title">Selected work</h2>
-      <p class="section__note">Four of seven units. Each is labelled with the stage it is
+      <h2 class="section__title">Coursework ledger</h2>
+      <p class="section__note">Four of seven BTEC units. Each is labelled with the stage it is
       genuinely at.</p>
     </div>
 
@@ -205,9 +327,10 @@
           <div>
             <span class="ledger__unit">Unit 3 / A Digital Portfolio</span>
             <h3 class="ledger__title">This website</h3>
-            <p class="ledger__desc">The brief is to design and build a digital portfolio to
-            apply for an IT apprenticeship. You are looking at it. Hand-written HTML, CSS and
-            JavaScript with no framework and no build step.</p>
+            <p class="ledger__desc">The brief was to design and build a digital portfolio to apply for an
+            IT apprenticeship. You are looking at it. Hand-written HTML, CSS and JavaScript
+            with no framework and no build step &mdash; rebuilt and republished in 2026 for my
+            T Level placement applications.</p>
             <ul class="ledger__artefacts">
               <li>this site</li>
               <li>design notes</li>
@@ -297,8 +420,8 @@
   <div class="shell">
     <div class="section__head">
       <h2 class="section__title">What I use</h2>
-      <p class="section__note">Only things I have actually used for a piece of work in this
-      portfolio, with the unit that evidences each.</p>
+      <p class="section__note">Each group links to something I have actually built or
+      submitted, rather than to a list I wrote out.</p>
     </div>
 
     <ul class="card-grid">
@@ -306,55 +429,69 @@
       <li class="card">
         <h3 class="card__title">Programming</h3>
         <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">JavaScript</li>
+          <li class="tag">TypeScript</li>
           <li class="tag">VB.NET</li>
-          <li class="tag">Visual Studio</li>
-          <li class="tag">Windows Forms</li>
+          <li class="tag">SQL</li>
+          <li class="tag">Bash</li>
         </ul>
-        <p>Reading, tracing and debugging event-driven desktop code: variables and data
-        types, selection, event handlers, subroutines and input conversion.</p>
-        <p class="skill-group__proof">Evidenced by <a href="projects/unit-12.html">Unit 12</a></p>
+        <p>Python for backends, automation and tooling; JavaScript and TypeScript across the
+        storefronts and web apps; SQL and an ORM; and VB.NET, which I read, debugged and fixed
+        defect by defect before I was allowed to call it understood.</p>
+        <p class="skill-group__proof">Evidenced by the
+        <a href="projects.html">live work</a> and
+        <a href="projects/unit-12.html">Unit 12</a></p>
       </li>
 
       <li class="card">
-        <h3 class="card__title">Web</h3>
+        <h3 class="card__title">Web development</h3>
         <ul class="tag-list">
           <li class="tag">HTML5</li>
           <li class="tag">CSS3</li>
-          <li class="tag">JavaScript</li>
-          <li class="tag">VS Code</li>
+          <li class="tag">React</li>
+          <li class="tag">Next.js</li>
+          <li class="tag">Vite</li>
+          <li class="tag">Tailwind CSS</li>
+          <li class="tag">Accessibility</li>
         </ul>
-        <p>Semantic markup, responsive layout, accessible navigation and forms. Two sites by
-        hand with no framework: the phone shop and this portfolio.</p>
+        <p>Semantic, accessible front ends. Sites built by hand with no framework at all, and
+        storefronts on React and Next.js with a design system, lazy loading, focus trapping and
+        real accessibility work.</p>
         <p class="skill-group__proof">Evidenced by <a href="projects/unit-13.html">Unit 13</a>
         and <a href="projects/unit-3.html">Unit 3</a></p>
       </li>
 
       <li class="card">
-        <h3 class="card__title">Media production</h3>
+        <h3 class="card__title">Infrastructure &amp; Linux</h3>
         <ul class="tag-list">
-          <li class="tag">GIMP</li>
-          <li class="tag">Audacity</li>
-          <li class="tag">OBS Studio</li>
-          <li class="tag">DaVinci Resolve</li>
-          <li class="tag">CapCut text-to-speech</li>
+          <li class="tag">Docker</li>
+          <li class="tag">Ubuntu &amp; Debian</li>
+          <li class="tag">systemd</li>
+          <li class="tag">SSH</li>
+          <li class="tag">Tailscale</li>
+          <li class="tag">Networking</li>
         </ul>
-        <p>Screen capture, editing, audio work and AI narration, plus the planning that goes
-        around them: treatments, storyboards, log sheets and asset lists.</p>
-        <p class="skill-group__proof">Evidenced by <a href="projects/unit-7.html">Unit 7</a>
-        and <a href="projects/unit-13.html">Unit 13</a></p>
+        <p>Containers, services that restart themselves, health checks, overlay networks and
+        key-only SSH. I moved my own 24/7 hosting off a laptop and onto a machine that stays on,
+        which turned out to be mostly a lesson in what fails quietly.</p>
+        <p class="skill-group__proof">Evidenced by the <a href="about.html">infrastructure page</a></p>
       </li>
 
       <li class="card">
         <h3 class="card__title">Tools and process</h3>
         <ul class="tag-list">
-          <li class="tag">PowerPoint</li>
-          <li class="tag">Google Slides</li>
-          <li class="tag">OneDrive</li>
-          <li class="tag">Microsoft Forms</li>
+          <li class="tag">Git</li>
+          <li class="tag">GitHub Actions</li>
+          <li class="tag">Vercel</li>
+          <li class="tag">VS Code</li>
+          <li class="tag">Figma</li>
+          <li class="tag">Test planning</li>
         </ul>
-        <p>Writing work up so someone else can follow it: test plans, source tables, risk
-        assessments, feedback gathering and evaluating a finished thing against its design.</p>
-        <p class="skill-group__proof">Evidenced across <a href="projects.html">all my units</a></p>
+        <p>Version control, automated deployment pipelines, and writing work up so someone else
+        can follow it: test plans, source and licence tables, risk assessments and evaluating
+        a finished thing against its own design.</p>
+        <p class="skill-group__proof">Evidenced across <a href="projects.html">all my work</a></p>
       </li>
 
     </ul>
@@ -364,10 +501,11 @@
 <section class="section">
   <div class="shell shell--narrow">
     <div class="prose">
-      <h2>If you are hiring an apprentice</h2>
+      <h2>If you are offering a work placement</h2>
       <p>I would rather show you something I made than tell you what I am like. Every claim on
-      this site links to the coursework behind it, and where something is unfinished or
-      unverified the page says so.</p>
+      this site links to the work behind it, and where something is unfinished or unverified
+      the page says so. I am looking for a 315-hour placement in software development, and I
+      would rather spend that time on real work with real people than on exercises.</p>
       <p>Email me at
       <a href="mailto:scebec.cristian@gmail.com">scebec.cristian@gmail.com</a>.</p>
     </div>
@@ -385,7 +523,7 @@
     <div class="site-footer__grid">
       <div>
         <h2>Cristian Scebec</h2>
-        <p>BTEC Level 2 First Extended Certificate in Information and Creative Technology. Looking for an IT apprenticeship.</p>
+        <p>Digital Software Development T Level (Foundation Year), Crawley College. Looking for a 315-hour work placement.</p>
       </div>
       <div>
         <h2>Pages</h2>
@@ -407,7 +545,7 @@
     </div>
     <div class="site-footer__base">
       <p>&copy; 2026 Cristian Scebec.</p>
-      <p>Built by hand in HTML, CSS and JavaScript for Unit 3: A Digital Portfolio.</p>
+      <p>Built by hand in HTML, CSS and JavaScript. First written for BTEC Unit 3, rebuilt and published on GitHub Pages in 2026.</p>
     </div>
   </div>
 </footer>

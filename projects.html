@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Work | Cristian Scebec</title>
-<meta name="description" content="Seven BTEC units, labelled honestly: what I built and tested, what I analysed and designed, and what is still only briefed.">
+<meta name="description" content="The systems I run and the coursework I submitted: a live Shopify storefront, an always-on home stack, a local AI server, and seven BTEC units labelled by their honest stage.">
 <meta name="author" content="Cristian Scebec">
 
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://sqwlasss.github.io/portfolio/projects.html">
+<meta property="og:url" content="https://sqwlasss.github.io/portfolio/projects.html">
 <meta property="og:title" content="Work | Cristian Scebec">
-<meta property="og:description" content="Seven BTEC units, labelled honestly: what I built and tested, what I analysed and designed, and what is still only briefed.">
+<meta property="og:description" content="The systems I run and the coursework I submitted: a live Shopify storefront, an always-on home stack, a local AI server, and seven BTEC units labelled by their honest stage.">
 <meta property="og:image" content="assets/images/u13-site-home.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -50,10 +52,192 @@
   <div class="shell">
 
     <div class="section__head">
-      <h1 class="section__title">Coursework</h1>
-      <p class="section__note">Seven units. Three of them have work you can open and look at.
-      Two are briefs I have not started yet, and two are exam units with no coursework at all.
-      Every row below says which it is.</p>
+      <h1 class="section__title">Work</h1>
+      <p class="section__note">Two kinds of work: things I built and still run, and the
+      coursework I submitted. The live work is first because it is what other people actually
+      use.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="shell">
+
+    <div class="section__head">
+      <h2 class="section__title">Live work</h2>
+      <p class="section__note">Built, deployed and in use. Each one has a constraint behind it
+      that shaped the design.</p>
+    </div>
+
+    <ul class="ledger">
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">&Oslash;BJECT 29 &mdash; art print storefront</span>
+            <h3 class="ledger__title">A live shop front on React and the Shopify Storefront API</h3>
+            <p class="ledger__desc">Twenty routes covering a wall-art and homeware catalogue:
+            filterable product listings, product pages with click-to-zoom galleries, a
+            persistent cart, a wishlist, and an account area with order history, addresses and
+            password reset. Customer accounts are handled by Firebase and the catalogue, cart
+            and checkout by Shopify, so card details never touch the front end. Rebranded the
+            business from its previous name and shipped it to Vercel. About 10,500 lines across
+            92 source files and 39 components.</p>
+            <ul class="ledger__artefacts">
+              <li>React 18, Vite 6, React Router</li>
+              <li>Shopify Storefront API</li>
+              <li>Firebase authentication</li>
+              <li>Tailwind, shadcn/ui, React Query</li>
+              <li>DOMPurify as the XSS boundary</li>
+              <li>GA4, sitemap, service worker</li>
+              <li>deployed on Vercel</li>
+            </ul>
+            <p class="skill-group__proof"><a href="https://ddouble-store.vercel.app" target="_blank" rel="noopener noreferrer">Visit the live site</a></p>
+          </div>
+          <p class="status status--live ledger__status">In production</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Always-on home infrastructure</span>
+            <h3 class="ledger__title">The always-on stack I run, and the tool that runs it</h3>
+            <p class="ledger__desc">My 24/7 hosting used to depend on a laptop being awake and
+            on a scheduled task not having quietly failed. It now runs on a Raspberry Pi under
+            Docker Compose with restart policies, health checks and pinned image versions, so it
+            comes back by itself. In front of it sits NEXUS, a Flask and vanilla-JavaScript
+            single-page manager I wrote that registers services, keeps them alive with a
+            watchdog, probes each one's health, exposes Prometheus-style metrics, and can wake
+            or shut down the other machines on my network.</p>
+            <ul class="ledger__artefacts">
+              <li>Docker, Docker Compose, named volumes</li>
+              <li>Python, Flask, vanilla JS</li>
+              <li>systemd, health checks, keepalive</li>
+              <li>Prometheus /metrics endpoint</li>
+              <li>Wake-on-LAN and SSH power control</li>
+            </ul>
+          </div>
+          <p class="status status--live ledger__status">In production</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Local AI server &mdash; dual-booted desktop</span>
+            <h3 class="ledger__title">A 35B model running on eight gigabytes of VRAM</h3>
+            <p class="ledger__desc">I wanted a language model running on my own hardware, and
+            the obvious route &mdash; running it inside Windows &mdash; failed for a reason I had
+            to diagnose before I could go anywhere. So I dual-booted the machine to Ubuntu,
+            and had to solve a firmware boot problem by writing to the UEFI from a privileged
+            token because the Windows boot manager would not do it on this board. It now serves
+            a 35B mixture-of-experts model at about 47 tokens per second. The same box also
+            runs a local image generator, and the two cannot run at once &mdash; together they
+            want more memory and more VRAM than the machine has &mdash; so I wrote a service that
+            switches modes on demand, plus a Python harness that benchmarks either one
+            headlessly.</p>
+            <ul class="ledger__artefacts">
+              <li>Ubuntu 26.04 dual-boot, UEFI work</li>
+              <li>35B MoE served locally, Q4 quantised</li>
+              <li>~47 tok/s decode, ~1.5s first token</li>
+              <li>image generation, ~90s per image</li>
+              <li>systemd GPU mode-switch service</li>
+              <li>headless benchmark harness</li>
+            </ul>
+          </div>
+          <p class="status status--live ledger__status">In production</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Client project &mdash; accountancy practice</span>
+            <h3 class="ledger__title">A VAT processing tool built for a real business</h3>
+            <p class="ledger__desc">My mother runs an accountancy practice and was assembling
+            VAT returns by hand from bank statements and receipts. I built her a web
+            application: it reads the client tree from a mounted Dropbox folder, extracts the
+            transactions from PDF bank statements, fills in the VAT workbook and writes a
+            report, then puts the finished files back where the practice will see them. It has
+            a dark interface with drag-and-drop uploads, a live log, and it stages each run in
+            its own folder so one job cannot damage another.</p>
+            <ul class="ledger__artefacts">
+              <li>Flask web application</li>
+              <li>PDF text extraction, Excel output</li>
+              <li>rclone and a mounted Dropbox remote</li>
+              <li>containerised agent pipeline</li>
+              <li>used for real client work</li>
+            </ul>
+          </div>
+          <p class="status status--live ledger__status">In production</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Tessel &mdash; single-product storefront</span>
+            <h3 class="ledger__title">A Next.js shop headless, with checkout that keeps the
+            business out of scope</h3>
+            <p class="ledger__desc">A storefront for a watch business, built on Next.js with
+            TypeScript and a hand-written Shopify client rather than a framework. The cart runs
+            through server actions and checkout happens on Shopify's own page, so the business
+            never handles card data. It verifies incoming webhooks with an HMAC signature,
+            strips GPS metadata out of every product photograph, and ships a check that fails
+            the build while any legal business detail is still a placeholder. About 7,700 lines
+            across 11 routes.</p>
+            <ul class="ledger__artefacts">
+              <li>Next.js App Router, React 19, TypeScript</li>
+              <li>server-side Shopify client, no Hydrogen</li>
+              <li>HMAC-verified order webhooks</li>
+              <li>EXIF and GPS stripping pipeline</li>
+              <li>compliance check that hard-fails</li>
+              <li>not yet published</li>
+            </ul>
+          </div>
+          <p class="status status--built ledger__status">Built, not yet deployed</p>
+        </div>
+      </li>
+
+      <li class="ledger__item">
+        <div class="ledger__link ledger__link--plain">
+          <div>
+            <span class="ledger__unit">Face research pipeline</span>
+            <h3 class="ledger__title">A consent-gated image analysis system, written from
+            scratch</h3>
+            <p class="ledger__desc">A self-hosted pipeline that runs on my own hardware behind
+            a private network and never sends an image anywhere. It detects faces and produces
+            embeddings, then scores candidate matches from research providers against a
+            confidence model that will only report a match once more than one piece of evidence
+            agrees. The published libraries would not build on my Python version, so I
+            reimplemented the face detector and the embedding model directly in ONNX and checked
+            them against the originals. Roughly 4,900 lines including the test suite.</p>
+            <ul class="ledger__artefacts">
+              <li>Python, FastAPI, Pydantic, SQLAlchemy</li>
+              <li>ONNX face detection and embedding</li>
+              <li>Alembic migrations, 15-table schema</li>
+              <li>async job queue, rate limiting</li>
+              <li>pytest suite</li>
+              <li>private-network only</li>
+            </ul>
+          </div>
+          <p class="status status--built ledger__status">Built, prototype</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight section--ruled">
+  <div class="shell">
+
+    <div class="section__head">
+      <h2 class="section__title">Coursework</h2>
+      <p class="section__note">Seven BTEC units. Three of them have work you can open and look
+      at. Two are briefs I have not started yet, and two are exam units with no coursework at
+      all. Every row below says which it is.</p>
     </div>
 
     <div class="prose">
@@ -86,7 +270,7 @@
 
     <p class="filter-count" id="filter-count" role="status"></p>
 
-    <ul class="ledger">
+    <ul class="ledger ledger--units">
 
       <li class="ledger__item" data-status="built" data-unit="unit-13">
         <a class="ledger__link" href="projects/unit-13.html">
@@ -254,7 +438,7 @@
     <div class="site-footer__grid">
       <div>
         <h2>Cristian Scebec</h2>
-        <p>BTEC Level 2 First Extended Certificate in Information and Creative Technology. Looking for an IT apprenticeship.</p>
+        <p>Digital Software Development T Level (Foundation Year), Crawley College. Looking for a 315-hour work placement.</p>
       </div>
       <div>
         <h2>Pages</h2>
@@ -276,7 +460,7 @@
     </div>
     <div class="site-footer__base">
       <p>&copy; 2026 Cristian Scebec.</p>
-      <p>Built by hand in HTML, CSS and JavaScript for Unit 3: A Digital Portfolio.</p>
+      <p>Built by hand in HTML, CSS and JavaScript. First written for BTEC Unit 3, rebuilt and published on GitHub Pages in 2026.</p>
     </div>
   </div>
 </footer>
